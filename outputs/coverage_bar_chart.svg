@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1010" viewBox="0 0 1200 1010" role="img" aria-labelledby="chart-title chart-desc">
+<title id="chart-title">Top 20 solvent-vapor candidates by computed-pair coverage</title>
+<desc id="chart-desc">Horizontal bars show the number of MOFs with directly computed Henry constants out of 1940 unique MOFs.</desc>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<g font-family="Arial, Helvetica, sans-serif" fill="#17212B">
+<text x="24" y="34" font-size="22" font-weight="700">Top 20 solvent-vapor candidates by computed-pair coverage</text>
+<line x1="335.0" y1="80" x2="335.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="335.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">0</text>
+<line x1="470.0" y1="80" x2="470.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="470.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">100</text>
+<line x1="605.0" y1="80" x2="605.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="605.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">200</text>
+<line x1="740.0" y1="80" x2="740.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="740.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">300</text>
+<line x1="875.0" y1="80" x2="875.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="875.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">400</text>
+<line x1="1010.0" y1="80" x2="1010.0" y2="922" stroke="#D9D9D9" stroke-width="1"/>
+<text x="1010.0" y="943" text-anchor="middle" font-size="12" fill="#4B5563">500</text>
+<text x="323" y="112.8" text-anchor="end" font-size="12.5">1-Propanol</text>
+<rect x="335" y="95.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="112.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="154.2" text-anchor="end" font-size="12.5">2,3-Dimethylbutane</text>
+<rect x="335" y="137.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="154.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="195.8" text-anchor="end" font-size="12.5">2-Pentanone</text>
+<rect x="335" y="178.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="195.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="237.2" text-anchor="end" font-size="12.5">3-Methylpentane</text>
+<rect x="335" y="220.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="237.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="278.8" text-anchor="end" font-size="12.5">4-Hexen-2-one</text>
+<rect x="335" y="261.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="278.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="320.2" text-anchor="end" font-size="12.5">4-Methyl-4-penten-2-one</text>
+<rect x="335" y="303.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="320.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="361.8" text-anchor="end" font-size="12.5">Acetone</text>
+<rect x="335" y="344.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="361.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="403.2" text-anchor="end" font-size="12.5">Acetonitrile</text>
+<rect x="335" y="386.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="403.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="444.8" text-anchor="end" font-size="12.5">Dimethyl ether</text>
+<rect x="335" y="427.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="444.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="486.2" text-anchor="end" font-size="12.5">Isobutane</text>
+<rect x="335" y="469.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="486.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="527.8" text-anchor="end" font-size="12.5">Isopentane</text>
+<rect x="335" y="510.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="527.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="569.2" text-anchor="end" font-size="12.5">Isopropyl alcohol</text>
+<rect x="335" y="552.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="569.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="610.8" text-anchor="end" font-size="12.5">Methyl isopropyl ether</text>
+<rect x="335" y="593.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="610.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="652.2" text-anchor="end" font-size="12.5">Methyl propyl ether</text>
+<rect x="335" y="635.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="652.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="693.8" text-anchor="end" font-size="12.5">Methyl tert-butyl ether</text>
+<rect x="335" y="676.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="693.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="735.2" text-anchor="end" font-size="12.5">Neopentane</text>
+<rect x="335" y="718.0" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="735.2" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="776.8" text-anchor="end" font-size="12.5">Propionitrile</text>
+<rect x="335" y="759.5" width="635.9" height="26.6" fill="#003057"/>
+<text x="979.9" y="776.8" font-size="12.5" font-weight="700">471 (24.3%)</text>
+<text x="323" y="818.2" text-anchor="end" font-size="12.5">3,3-dimethylbutan-1-ol</text>
+<rect x="335" y="801.0" width="74.2" height="26.6" fill="#B3A369"/>
+<text x="418.2" y="818.2" font-size="12.5" font-weight="700">55 (2.8%)</text>
+<text x="323" y="859.8" text-anchor="end" font-size="12.5">Diethylene Glycol</text>
+<rect x="335" y="842.5" width="74.2" height="26.6" fill="#B3A369"/>
+<text x="418.2" y="859.8" font-size="12.5" font-weight="700">55 (2.8%)</text>
+<text x="323" y="901.2" text-anchor="end" font-size="12.5">3-Methoxy-1-butanol</text>
+<rect x="335" y="884.0" width="71.5" height="26.6" fill="#B3A369"/>
+<text x="415.6" y="901.2" font-size="12.5" font-weight="700">53 (2.7%)</text>
+<text x="672.5" y="971" text-anchor="middle" font-size="13" font-weight="700">MOFs with a directly computed Henry constant (count)</text>
+<rect x="24" y="970" width="14" height="14" fill="#003057"/><text x="45" y="982" font-size="12">Initial named set</text>
+<rect x="175" y="970" width="14" height="14" fill="#B3A369"/><text x="196" y="982" font-size="12">QM9-derived OOD set</text>
+<text x="1176" y="982" text-anchor="end" font-size="11" fill="#4B5563">Computed pairs only; denominator = 1,940 unique MOFs.</text>
+</g>
+</svg>

@@ -1,0 +1,20 @@
+# macOS and editor files
+.DS_Store
+.idea/
+.vscode/
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local web-search scratch files
+.firecrawl/
+
+# Downloaded D-MOPH-25 archives and extracted source copies.
+# Their filenames, checksums, and retrieval details are recorded in
+# notes/data_provenance.md and they can be downloaded again.
+data/*.tar.gz
+data/dmoph25_data/
+data/dmoph25_codes/
