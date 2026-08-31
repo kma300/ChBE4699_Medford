@@ -295,7 +295,7 @@ addText(
 addText(
   slide,
   "next-step",
-  "Select 12 MOFs  →  test gas identification, composition drift & product/feed ratios  →  reduce if performance holds",
+  "① Analyze 471 × 8 response patterns  →  ② Select 12 MOFs  →  ③ Test gas ID • mixtures • drift • ratios  →  ④ Prune",
   { left: 168, top: 632, width: 1014, height: 34 },
   { fontSize: 18, bold: true, color: "#162236" },
 );
