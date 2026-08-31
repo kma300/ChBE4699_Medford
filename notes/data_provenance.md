@@ -43,7 +43,7 @@ The deposited file and paper do not agree exactly:
 - Paper section 3.1: 16,630 final pairs, 1,940 MOFs, and 113 molecules in the active-learning data; section 2.1 defines a wider target space of 5,613 MOFs and 128 molecules.
 - Planning/request expectation: approximately 140 molecules and approximately 16,600 computed pairs.
 
-Per Ken's instruction to print both and stop when the files disagree with expectations, downstream analysis was not performed.
+Per Ken's instruction to print both and stop when the files disagree with expectations, downstream analysis was initially stopped at that point.
 
 The iteration files localize the two-row shortfall to two active-learning batches:
 

@@ -18,3 +18,7 @@ __pycache__/
 data/*.tar.gz
 data/dmoph25_data/
 data/dmoph25_codes/
+
+# Artifact-tool inspection logs are local QA traces.
+outputs/*.inspect.ndjson
+outputs/*.layout.json

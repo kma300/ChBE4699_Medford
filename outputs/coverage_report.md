@@ -1,70 +1,52 @@
-# D-MOPH-25 solvent-vapor coverage report
+# Eight-gas ethylene-cracker coverage report
 
-## Working data
+## Monday result
 
-- Directly computed data only: **16,628 unique MOF–molecule pairs**, **1,940 MOFs**, and **113 molecules**.
-- The deposited `K` column is the **linear Henry coefficient at 300 K**, in **mol kg^-1 Pa^-1**.
-- The paper's regression model predicts `log10(K)`, but `final.csv` stores linear `K`. No logarithm was applied before the median and IQR calculations below.
-- All reported quantiles use pandas' default linear interpolation over the directly computed `K` values for each molecule. Zeros are retained as deposited values.
+The approved process-gas panel is **fully aligned across 471 MOFs**: all eight gases have a directly computed Henry constant for the same MOF set. This produces **3,768 computed MOF–gas pairs** with no missing values and no duplicate keys.
 
-## Evidence for units and scale
+The 471-MOF set covers **24.3%** of the **1,940 unique MOFs** in the deposited computed table. Because every gas has the same count, all eight tie for coverage rank 1; coverage does not distinguish among them.
 
-- Paper section 2.2 states that the constants were computed at 300 K by Widom insertion in RASPA2.0.
-- Paper section 2.4.1 defines nonporous pairs using `K_H < 10^-15 mol kg^-1 Pa^-1`, establishing the reported unit.
-- Figure 2 and section 2.4.2 state that the neural network predicts logarithmic Henry constants.
-- Supplement section S9 writes the prediction error in `log(K_H)` and uses the `1/ln(10)` conversion, identifying the model transform as base-10 logarithm.
-- The deposited `K` values are non-logarithmic: they are nonnegative and span zero through 2.389e+89; a logarithmic column would contain negative values for `K < 1`.
+## Approved target gases
 
-Sources: [open paper](https://www.osti.gov/servlets/purl/3002420), [IOP supplementary data](https://iopscience.iop.org/article/10.1088/2632-2153/ae0241/data), and [Zenodo record](https://zenodo.org/records/16754752).
+| Coverage rank | Gas | Process role | Directly computed MOFs | Coverage of 1,940 MOFs | Median K | IQR | Exact zeros |
+|---:|---|---|---:|---:|---:|---:|---:|
+| 1 | Methane | Cracking by-product / fuel gas | 471 | 24.3% | 1.080e-05 | 1.497e-05 | 0 |
+| 1 | Ethane | Primary feed / unconverted feed | 471 | 24.3% | 1.631e-04 | 4.726e-04 | 0 |
+| 1 | Ethylene | Primary product | 471 | 24.3% | 7.980e-05 | 1.970e-04 | 0 |
+| 1 | Propane | Alternate feed / unconverted co-feed | 471 | 24.3% | 1.309e-03 | 5.767e-03 | 0 |
+| 1 | Propylene | Co-product | 471 | 24.3% | 9.388e-04 | 3.513e-03 | 0 |
+| 1 | Isobutane | C4 light-end proxy | 471 | 24.3% | 3.778e-03 | 2.889e-02 | 6 |
+| 1 | Isopentane | C5 / heavier-feed proxy | 471 | 24.3% | 1.716e-02 | 2.743e-01 | 10 |
+| 1 | 2-Pentene | C5 olefin / cracked-product proxy | 471 | 24.3% | 4.055e-02 | 4.367e-01 | 1 |
 
-## Candidate-screen rule
+`K` is the **linear Henry coefficient at 300 K** in **mol kg^-1 Pa^-1**. Medians and quartiles are pandas dataframe quantiles with linear interpolation over directly computed values only; exact deposited zeros are retained. The paper predicts `log10(K)` during machine learning, but the deposited `final.csv` stores the nonnegative linear `K` values used here.
 
-This is a broad coverage screen, not a final panel choice. It includes alcohols, ketones, ethers, C4+ alkanes, and simple nitriles. Nitriles were included because acetonitrile and propionitrile are directly relevant industrial solvent vapors even though the original parenthetical class list did not name them. Multifunctional alcohol/ether and alcohol/ketone molecules are retained. C1–C3 alkanes, alkenes without another included function, aldehydes, amines, hydrogen cyanide, and multifunctional nitriles are excluded.
+## Interpretation
 
-- Flagged candidates: **89**
-- Structural-family counts (multifunctional candidates can appear more than once): alcohol: 34, alkane: 17, alkene: 2, ether: 29, ketone: 13, nitrile: 6
-- No ester, aromatic, or chlorinated molecule occurs among the 113 directly computed molecules.
+- **Core feed/product group:** methane, ethane, ethylene, propane, and propylene.
+- **Coverage-matched C4/C5 proxies:** isobutane, isopentane, and 2-pentene. These provide heavier light-end contrast; they are not a claim that each is a dominant product in every cracker.
+- **Outlet means a conditioned extractive sample:** the intended measurement location is a post-quench/sample-conditioned sidestream near 300 K, not direct MOF exposure to raw furnace coil effluent near 850 °C.
+- The normalized 471 × 8 Henry matrix has **rank 8** but a condition number of **1000.4**. The strongest monotonic similarities are ethane/ethene (Spearman ρ = 0.995) and propane/propene (ρ = 0.990). This supports starting with 12 MOFs for redundancy and reducing only after mixture testing.
 
-## Top 20 candidates by computed-pair coverage
+## Four bullets for Monday
 
-Henry statistics are in `mol kg^-1 Pa^-1`.
+- D-MOPH-25 contains **16,628 directly computed pairs**, **1,940 MOFs**, and **113 molecules** at **300 K**.
+- The eight-gas ethylene-cracker panel yields a complete **471 MOFs × 8 gases = 3,768 pair** comparison matrix.
+- The target separates feed/product markers (ethane/ethylene and propane/propylene) and adds methane plus three C4/C5 process-gas proxies.
+- Next: select **12 MOFs**, test gas identification, composition drift, and product/feed ratios, then reduce the array if performance is retained.
 
-| Coverage rank | Molecule | Class | Computed MOFs | Coverage | Median K | IQR |
-|---:|---|---|---:|---:|---:|---:|
-| 1 | 1-Propanol | alcohol | 471 | 24.3% | 5.467e-03 | 1.266e-01 |
-| 1 | 2,3-Dimethylbutane | alkane | 471 | 24.3% | 1.869e-02 | 1.490e+00 |
-| 1 | 2-Pentanone | ketone | 471 | 24.3% | 1.469e-02 | 7.760e-01 |
-| 1 | 3-Methylpentane | alkane | 471 | 24.3% | 5.755e-02 | 2.807e+00 |
-| 1 | 4-Hexen-2-one | ketone + alkene | 471 | 24.3% | 2.231e+00 | 2.211e+02 |
-| 1 | 4-Methyl-4-penten-2-one | ketone + alkene | 471 | 24.3% | 1.055e+00 | 7.187e+01 |
-| 1 | Acetone | ketone | 471 | 24.3% | 4.235e-02 | 5.781e-01 |
-| 1 | Acetonitrile | nitrile | 471 | 24.3% | 3.744e-03 | 3.229e-02 |
-| 1 | Dimethyl ether | ether | 471 | 24.3% | 2.488e-03 | 1.490e-02 |
-| 1 | Isobutane | alkane | 471 | 24.3% | 3.778e-03 | 2.889e-02 |
-| 1 | Isopentane | alkane | 471 | 24.3% | 1.716e-02 | 2.743e-01 |
-| 1 | Isopropyl alcohol | alcohol | 471 | 24.3% | 8.288e-03 | 1.714e-01 |
-| 1 | Methyl isopropyl ether | ether | 471 | 24.3% | 3.804e-02 | 6.079e-01 |
-| 1 | Methyl propyl ether | ether | 471 | 24.3% | 3.280e-02 | 2.448e-01 |
-| 1 | Methyl tert-butyl ether | ether | 471 | 24.3% | 5.486e-03 | 6.729e-01 |
-| 1 | Neopentane | alkane | 471 | 24.3% | 1.202e-03 | 5.136e-02 |
-| 1 | Propionitrile | nitrile | 471 | 24.3% | 1.917e-02 | 2.176e-01 |
-| 2 | 3,3-dimethylbutan-1-ol | alcohol | 55 | 2.8% | 3.218e-10 | 1.230e+01 |
-| 2 | Diethylene Glycol | alcohol + ether | 55 | 2.8% | 2.584e-02 | 2.076e+02 |
-| 3 | 3-Methoxy-1-butanol | alcohol + ether | 53 | 2.7% | 8.103e-01 | 1.350e+02 |
+![Computed-pair coverage bar chart](coverage_bar_chart.svg)
 
-![Coverage bar chart](coverage_bar_chart.svg)
+## Boundaries and remaining inputs
 
-## Monday update bullets
+- Computed pairs only: no ML-completed values are included.
+- Henry constants are pure-component dilute-limit descriptors. Mixture-response assumptions, noise, competitive adsorption, humidity, and sensor transduction are not yet modeled.
+- A percentage of the **true total outlet** requires concentrations for water, hydrogen, carbon monoxide, carbon dioxide, acetylene, and other stream species not in this eight-gas D-MOPH panel. Until then, an eight-gas-normalized percentage must be labeled as such.
+- The next stage needs a representative post-quench outlet composition and operating ranges, an exact sample location, and a decision on whether to model only normal operation or also startup/upset states.
 
-- The verified working set contains **16,628 directly computed MOF–molecule pairs** spanning **1,940 MOFs and 113 molecules**; the two-pair publication discrepancy is documented and the deposited rows are authoritative for this analysis.
-- The broad structural screen flags **89 plausible solvent-vapor candidates**; there are no ester, aromatic, or chlorinated candidates in the computed table.
-- **17 candidates each have 471 computed MOFs (24.3% coverage)**, while the best QM9-derived candidate has only **55 MOFs (2.8%)**.
-- Coverage is therefore highly uneven; these results identify candidates for Ken's panel decision but do **not** select the final 8–12 vapors or any MOF sensor array.
+## Evidence
 
-## Problems and cautions
-
-- The two intended-but-absent pairs cannot be identified from the deposit; the analysis uses the 16,628 rows actually present.
-- The QM9-derived candidates have sparse direct coverage (at most 55 MOFs), so a panel containing many of them would produce a much less complete MOF × VOC matrix.
-- `final.csv` contains **522 exact zero `K` values**. They are retained because they are deposited computed results, but they likely represent numerical underflow or effectively nonporous pairs.
-- The structural screen is deliberately broad. Solvent use, toxicity, vapor pressure, and experimental availability must be reviewed before Ken chooses a final panel.
-- The public Zenodo deposit does not contain the ML-completed table, optimized classifiers, or neural-network checkpoints described in the paper.
+- Dataset and deposited `final.csv`: [D-MOPH-25 Zenodo record](https://zenodo.org/records/16754752)
+- Units, 300 K calculation, and active-learning dataset description: [Choi, Sholl & Medford (2025)](https://doi.org/10.1088/2632-2153/ae0241)
+- Ethylene-cracker process context: [U.S. EPA petrochemical technical support document](https://www.epa.gov/sites/default/files/2015-03/documents/subpartx-tsd-petrochem.pdf)
+- Extractive furnace-effluent measurement context: [Siemens ethylene furnace-effluent analyzer note](https://cache.industry.siemens.com/dl/files/563/109770563/att_995347/v1/PIAAP-00002-0118-Ethylene.pdf)
