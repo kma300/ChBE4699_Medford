@@ -272,7 +272,7 @@ slide.shapes.add({
 addText(
   slide,
   "dataset-stats",
-  "FULL COMPUTED DATASET    16,628 pairs   ·   1,940 MOFs   ·   113 molecules   ·   300 K   ·   linear K",
+  "THIS WEEK COMPLETE    ✓ Repo + data    ✓ Inventory + units    ✓ 8-gas panel    ✓ 471 × 8 coverage matrix",
   { left: 88, top: 568, width: 1104, height: 24 },
   { fontSize: 15, bold: true, color: "#FFFFFF", alignment: "center" },
 );
