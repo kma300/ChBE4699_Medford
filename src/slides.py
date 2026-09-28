@@ -1,4 +1,4 @@
-"""Render weekly update slides (PNG, 1920x1440) in the week-1/2 visual style, plus a .pptx wrapper.
+"""Render weekly update pages (PNG previews, 1920x1440, plus a vector PDF) in the week-1/2 visual style.
 
 A slide is a list of blocks stacked top to bottom:
   ('header', text) ('title', text) ('heading', text) ('text', text, {size, color, weight, after})
@@ -50,6 +50,7 @@ def check_numbers(texts, registry, allowed=()):
 class _Canvas:
     def __init__(self):
         plt.rcParams['font.family'] = FONT
+        plt.rcParams['pdf.fonttype'] = 42  # embed TrueType so PDF text stays selectable
         self.fig = plt.figure(figsize=(W/100, H/100), dpi=100, facecolor=C['bg'])
         self.ax = self.fig.add_axes([0, 0, 1, 1])
         self.ax.set_xlim(0, W)
@@ -213,22 +214,15 @@ def _blocks(cv, blocks, x, y, width):
     return y-top
 
 
-def render(blocks, path):
-    """Draw one slide; returns (all text on the slide, bottom y in px) so callers can check fit and numbers."""
+def render(blocks, png_path, pdf=None):
+    """Draw one page to a PNG (and, if given, as a vector page of a PdfPages document).
+
+    Returns (all text on the page, bottom y in px) so callers can check fit and numbers.
+    """
     cv = _Canvas()
     bottom = MARGIN*.6+_blocks(cv, blocks, MARGIN, MARGIN*.6, W-2*MARGIN)
-    cv.fig.savefig(path, dpi=100, facecolor=C['bg'])
+    cv.fig.savefig(png_path, dpi=100, facecolor=C['bg'])
+    if pdf is not None:
+        pdf.savefig(cv.fig, facecolor=C['bg'])
     plt.close(cv.fig)
     return cv.texts, bottom
-
-
-def to_pptx(pngs, path):
-    """Wrap rendered slides in a 4:3 deck (one full-bleed image per slide)."""
-    from pptx import Presentation
-    from pptx.util import Inches
-    deck = Presentation()
-    deck.slide_width, deck.slide_height = Inches(10), Inches(7.5)
-    for png in pngs:
-        slide = deck.slides.add_slide(deck.slide_layouts[6])
-        slide.shapes.add_picture(str(png), 0, 0, width=deck.slide_width, height=deck.slide_height)
-    deck.save(path)

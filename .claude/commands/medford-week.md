@@ -28,18 +28,25 @@ highest `weeks/NN/` folder plus one).
 
 - Copy the previous week's `experiment.py` and `deliverables.py` into `weeks/NN/` and adapt them.
   - `experiment.py` writes `results.json`.
-  - `deliverables.py` builds the slides with `src/slides.py`. Every number must go through `Registry.num()`.
+  - `deliverables.py` builds ONE summary card with `src/slides.py` (`weekNN_onepager.pdf` plus a PNG preview), following
+    Ken's format:
+    - It answers any questions Medford asked, in one table.
+    - It shows the key result chart.
+    - It explains why, and ends on the next step or question.
+    - Every number must go through `Registry.num()`.
+  - The Slack message is only a TL;DR: 3-4 bullets plus the question. The detail lives on the card.
 - Run `python3 -m pytest`, then `python3 -m src.weekly NN`. The driver fails on:
   - more than 2 slides
   - a slide that overflows
   - any number that is not traced to `results.json`
-- Look at every rendered slide PNG before showing it. A passing check does not prove the layout is right.
+- Look at the rendered card PNG, and a Quick Look thumbnail of the PDF, before showing it. A passing check does not prove
+  the layout is right.
 
 ## 4. Hand off to Ken
 
 - Show Ken:
-  - the slide PNG paths
-  - the exact Slack text from `weeks/NN/slack_draft.md`
+  - the card PDF and PNG paths
+  - the exact TL;DR Slack text from `weeks/NN/slack_draft.md`
   - a 3-line summary of what changed
 - Never send anything to Medford without Ken's explicit approval of the exact text.
 - After approval, Ken either posts it himself or asks you to post it.

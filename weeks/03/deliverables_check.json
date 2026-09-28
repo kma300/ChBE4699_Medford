@@ -1,14 +1,12 @@
 {
-  "slides": 2,
+  "slides": 1,
   "overflow_px": [
-    0.0,
     0.0
   ],
   "untraced_numbers": [],
   "outputs": [
-    "weeks/03/week3_slide_1.png",
-    "weeks/03/week3_slide_2.png",
-    "weeks/03/week3_update.pptx",
+    "weeks/03/week3_onepager.pdf",
+    "weeks/03/week3_onepager.png",
     "weeks/03/slack_draft.md"
   ]
 }
