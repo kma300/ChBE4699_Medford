@@ -1,0 +1,642 @@
+{
+  "primary": {
+    "indices": [
+      43,
+      89,
+      100,
+      114,
+      115,
+      121,
+      218,
+      227,
+      237,
+      281,
+      325,
+      444
+    ],
+    "mofs": [
+      "CISMAT01",
+      "FERHAN",
+      "FUDQIF",
+      "GEDLIM",
+      "GEHSAN",
+      "GIZJOP",
+      "LOFZUB",
+      "MEJQEZ",
+      "MOGVAG",
+      "PUQXUV",
+      "RURPEA",
+      "XUWVEQ"
+    ],
+    "ridge": 1e-06,
+    "candidate_count": 464,
+    "score": 52.78330666961372,
+    "rank": 7,
+    "singular_values": [
+      200.37079380859493,
+      175.24895439723835,
+      153.6335884382274,
+      116.26334287104444,
+      31.872214905638014,
+      8.746864124005777,
+      1.6560211132881244
+    ],
+    "minimum_singular_value": 1.6560211132881244,
+    "condition_number": 120.99531352637605,
+    "stopping_reason": "no_swap_improvement_above_1e-8",
+    "trace": [
+      {
+        "operation": "add",
+        "step": 1,
+        "added": "HAMJOW",
+        "score": -73.30544429206664
+      },
+      {
+        "operation": "add",
+        "step": 2,
+        "added": "CISMAT01",
+        "score": -50.15331203735228
+      },
+      {
+        "operation": "add",
+        "step": 3,
+        "added": "FERHAN",
+        "score": -27.095759384178876
+      },
+      {
+        "operation": "add",
+        "step": 4,
+        "added": "PUQXUV",
+        "score": -4.289510968107928
+      },
+      {
+        "operation": "add",
+        "step": 5,
+        "added": "MOGVAG",
+        "score": 15.984629877504348
+      },
+      {
+        "operation": "add",
+        "step": 6,
+        "added": "GEHSAN",
+        "score": 34.491946031908114
+      },
+      {
+        "operation": "add",
+        "step": 7,
+        "added": "XUWVEQ",
+        "score": 49.04230518080165
+      },
+      {
+        "operation": "add",
+        "step": 8,
+        "added": "RURPEA",
+        "score": 50.180444198276405
+      },
+      {
+        "operation": "add",
+        "step": 9,
+        "added": "MEJQEZ",
+        "score": 50.946481286920324
+      },
+      {
+        "operation": "add",
+        "step": 10,
+        "added": "LOFZUB",
+        "score": 51.68544383791194
+      },
+      {
+        "operation": "add",
+        "step": 11,
+        "added": "GIZJOP",
+        "score": 52.27108870884421
+      },
+      {
+        "operation": "add",
+        "step": 12,
+        "added": "FUDQIF",
+        "score": 52.78052765548269
+      },
+      {
+        "operation": "swap",
+        "step": 1,
+        "removed": "HAMJOW",
+        "added": "GEDLIM",
+        "gain": 0.0027790141310291006,
+        "score": 52.78330666961372
+      }
+    ]
+  },
+  "ridge_1e-8": {
+    "indices": [
+      43,
+      89,
+      100,
+      114,
+      115,
+      121,
+      218,
+      227,
+      237,
+      281,
+      325,
+      444
+    ],
+    "mofs": [
+      "CISMAT01",
+      "FERHAN",
+      "FUDQIF",
+      "GEDLIM",
+      "GEHSAN",
+      "GIZJOP",
+      "LOFZUB",
+      "MEJQEZ",
+      "MOGVAG",
+      "PUQXUV",
+      "RURPEA",
+      "XUWVEQ"
+    ],
+    "ridge": 1e-08,
+    "candidate_count": 464,
+    "score": 52.78330629453036,
+    "rank": 7,
+    "singular_values": [
+      200.37079380859493,
+      175.24895439723835,
+      153.6335884382274,
+      116.26334287104444,
+      31.872214905638014,
+      8.746864124005777,
+      1.6560211132881244
+    ],
+    "minimum_singular_value": 1.6560211132881244,
+    "condition_number": 120.99531352637605,
+    "stopping_reason": "no_swap_improvement_above_1e-8",
+    "trace": [
+      {
+        "operation": "add",
+        "step": 1,
+        "added": "HAMJOW",
+        "score": -100.93646540806306
+      },
+      {
+        "operation": "add",
+        "step": 2,
+        "added": "CISMAT01",
+        "score": -73.17916296748066
+      },
+      {
+        "operation": "add",
+        "step": 3,
+        "added": "FERHAN",
+        "score": -45.51644012843194
+      },
+      {
+        "operation": "add",
+        "step": 4,
+        "added": "PUQXUV",
+        "score": -18.105021526382874
+      },
+      {
+        "operation": "add",
+        "step": 5,
+        "added": "MOGVAG",
+        "score": 6.774289502899805
+      },
+      {
+        "operation": "add",
+        "step": 6,
+        "added": "GEHSAN",
+        "score": 29.886775826614567
+      },
+      {
+        "operation": "add",
+        "step": 7,
+        "added": "XUWVEQ",
+        "score": 49.04230369813512
+      },
+      {
+        "operation": "add",
+        "step": 8,
+        "added": "RURPEA",
+        "score": 50.180443661838055
+      },
+      {
+        "operation": "add",
+        "step": 9,
+        "added": "MEJQEZ",
+        "score": 50.94648086373413
+      },
+      {
+        "operation": "add",
+        "step": 10,
+        "added": "LOFZUB",
+        "score": 51.68544341581323
+      },
+      {
+        "operation": "add",
+        "step": 11,
+        "added": "GIZJOP",
+        "score": 52.27108829988927
+      },
+      {
+        "operation": "add",
+        "step": 12,
+        "added": "FUDQIF",
+        "score": 52.780527280341595
+      },
+      {
+        "operation": "swap",
+        "step": 1,
+        "removed": "HAMJOW",
+        "added": "GEDLIM",
+        "gain": 0.0027790141887678033,
+        "score": 52.78330629453036
+      }
+    ]
+  },
+  "ridge_1e-4": {
+    "indices": [
+      43,
+      89,
+      100,
+      114,
+      115,
+      121,
+      218,
+      227,
+      237,
+      281,
+      325,
+      444
+    ],
+    "mofs": [
+      "CISMAT01",
+      "FERHAN",
+      "FUDQIF",
+      "GEDLIM",
+      "GEHSAN",
+      "GIZJOP",
+      "LOFZUB",
+      "MEJQEZ",
+      "MOGVAG",
+      "PUQXUV",
+      "RURPEA",
+      "XUWVEQ"
+    ],
+    "ridge": 0.0001,
+    "candidate_count": 464,
+    "score": 52.783344177289415,
+    "rank": 7,
+    "singular_values": [
+      200.37079380859493,
+      175.24895439723835,
+      153.6335884382274,
+      116.26334287104444,
+      31.872214905638014,
+      8.746864124005777,
+      1.6560211132881244
+    ],
+    "minimum_singular_value": 1.6560211132881244,
+    "condition_number": 120.99531352637605,
+    "stopping_reason": "no_swap_improvement_above_1e-8",
+    "trace": [
+      {
+        "operation": "add",
+        "step": 1,
+        "added": "HAMJOW",
+        "score": -45.674423169349424
+      },
+      {
+        "operation": "add",
+        "step": 2,
+        "added": "CISMAT01",
+        "score": -27.127461091462642
+      },
+      {
+        "operation": "add",
+        "step": 3,
+        "added": "FERHAN",
+        "score": -8.675078613406619
+      },
+      {
+        "operation": "add",
+        "step": 4,
+        "added": "PUQXUV",
+        "score": 9.525999633370114
+      },
+      {
+        "operation": "add",
+        "step": 5,
+        "added": "MOGVAG",
+        "score": 25.194970509180454
+      },
+      {
+        "operation": "add",
+        "step": 6,
+        "added": "GEHSAN",
+        "score": 39.09711814798664
+      },
+      {
+        "operation": "add",
+        "step": 7,
+        "added": "XUWVEQ",
+        "score": 49.04245343660156
+      },
+      {
+        "operation": "add",
+        "step": 8,
+        "added": "RURPEA",
+        "score": 50.18049784074
+      },
+      {
+        "operation": "add",
+        "step": 9,
+        "added": "MEJQEZ",
+        "score": 50.94652360470029
+      },
+      {
+        "operation": "add",
+        "step": 10,
+        "added": "LOFZUB",
+        "score": 51.68548604694323
+      },
+      {
+        "operation": "add",
+        "step": 11,
+        "added": "GIZJOP",
+        "score": 52.271129603552154
+      },
+      {
+        "operation": "add",
+        "step": 12,
+        "added": "FUDQIF",
+        "score": 52.780565168930295
+      },
+      {
+        "operation": "swap",
+        "step": 1,
+        "removed": "HAMJOW",
+        "added": "GEDLIM",
+        "gain": 0.0027790083591199277,
+        "score": 52.783344177289415
+      }
+    ]
+  },
+  "all_471": {
+    "indices": [
+      43,
+      89,
+      100,
+      114,
+      115,
+      121,
+      218,
+      227,
+      237,
+      281,
+      325,
+      444
+    ],
+    "mofs": [
+      "CISMAT01",
+      "FERHAN",
+      "FUDQIF",
+      "GEDLIM",
+      "GEHSAN",
+      "GIZJOP",
+      "LOFZUB",
+      "MEJQEZ",
+      "MOGVAG",
+      "PUQXUV",
+      "RURPEA",
+      "XUWVEQ"
+    ],
+    "ridge": 1e-06,
+    "candidate_count": 471,
+    "score": 52.78330666961372,
+    "rank": 7,
+    "singular_values": [
+      200.37079380859493,
+      175.24895439723835,
+      153.6335884382274,
+      116.26334287104444,
+      31.872214905638014,
+      8.746864124005777,
+      1.6560211132881244
+    ],
+    "minimum_singular_value": 1.6560211132881244,
+    "condition_number": 120.99531352637605,
+    "stopping_reason": "no_swap_improvement_above_1e-8",
+    "trace": [
+      {
+        "operation": "add",
+        "step": 1,
+        "added": "HAMJOW",
+        "score": -73.30544429206664
+      },
+      {
+        "operation": "add",
+        "step": 2,
+        "added": "CISMAT01",
+        "score": -50.15331203735228
+      },
+      {
+        "operation": "add",
+        "step": 3,
+        "added": "FERHAN",
+        "score": -27.095759384178876
+      },
+      {
+        "operation": "add",
+        "step": 4,
+        "added": "PUQXUV",
+        "score": -4.289510968107928
+      },
+      {
+        "operation": "add",
+        "step": 5,
+        "added": "MOGVAG",
+        "score": 15.984629877504348
+      },
+      {
+        "operation": "add",
+        "step": 6,
+        "added": "GEHSAN",
+        "score": 34.491946031908114
+      },
+      {
+        "operation": "add",
+        "step": 7,
+        "added": "XUWVEQ",
+        "score": 49.04230518080165
+      },
+      {
+        "operation": "add",
+        "step": 8,
+        "added": "RURPEA",
+        "score": 50.180444198276405
+      },
+      {
+        "operation": "add",
+        "step": 9,
+        "added": "MEJQEZ",
+        "score": 50.946481286920324
+      },
+      {
+        "operation": "add",
+        "step": 10,
+        "added": "LOFZUB",
+        "score": 51.68544383791194
+      },
+      {
+        "operation": "add",
+        "step": 11,
+        "added": "GIZJOP",
+        "score": 52.27108870884421
+      },
+      {
+        "operation": "add",
+        "step": 12,
+        "added": "FUDQIF",
+        "score": 52.78052765548269
+      },
+      {
+        "operation": "swap",
+        "step": 1,
+        "removed": "HAMJOW",
+        "added": "GEDLIM",
+        "gain": 0.0027790141310291006,
+        "score": 52.78330666961372
+      }
+    ]
+  },
+  "without_GOMREG_GOMRAC": {
+    "indices": [
+      43,
+      89,
+      100,
+      114,
+      115,
+      121,
+      218,
+      227,
+      237,
+      281,
+      325,
+      444
+    ],
+    "mofs": [
+      "CISMAT01",
+      "FERHAN",
+      "FUDQIF",
+      "GEDLIM",
+      "GEHSAN",
+      "GIZJOP",
+      "LOFZUB",
+      "MEJQEZ",
+      "MOGVAG",
+      "PUQXUV",
+      "RURPEA",
+      "XUWVEQ"
+    ],
+    "ridge": 1e-06,
+    "candidate_count": 462,
+    "score": 52.78330666961372,
+    "rank": 7,
+    "singular_values": [
+      200.37079380859493,
+      175.24895439723835,
+      153.6335884382274,
+      116.26334287104444,
+      31.872214905638014,
+      8.746864124005777,
+      1.6560211132881244
+    ],
+    "minimum_singular_value": 1.6560211132881244,
+    "condition_number": 120.99531352637605,
+    "stopping_reason": "no_swap_improvement_above_1e-8",
+    "trace": [
+      {
+        "operation": "add",
+        "step": 1,
+        "added": "HAMJOW",
+        "score": -73.30544429206664
+      },
+      {
+        "operation": "add",
+        "step": 2,
+        "added": "CISMAT01",
+        "score": -50.15331203735228
+      },
+      {
+        "operation": "add",
+        "step": 3,
+        "added": "FERHAN",
+        "score": -27.095759384178876
+      },
+      {
+        "operation": "add",
+        "step": 4,
+        "added": "PUQXUV",
+        "score": -4.289510968107928
+      },
+      {
+        "operation": "add",
+        "step": 5,
+        "added": "MOGVAG",
+        "score": 15.984629877504348
+      },
+      {
+        "operation": "add",
+        "step": 6,
+        "added": "GEHSAN",
+        "score": 34.491946031908114
+      },
+      {
+        "operation": "add",
+        "step": 7,
+        "added": "XUWVEQ",
+        "score": 49.04230518080165
+      },
+      {
+        "operation": "add",
+        "step": 8,
+        "added": "RURPEA",
+        "score": 50.180444198276405
+      },
+      {
+        "operation": "add",
+        "step": 9,
+        "added": "MEJQEZ",
+        "score": 50.946481286920324
+      },
+      {
+        "operation": "add",
+        "step": 10,
+        "added": "LOFZUB",
+        "score": 51.68544383791194
+      },
+      {
+        "operation": "add",
+        "step": 11,
+        "added": "GIZJOP",
+        "score": 52.27108870884421
+      },
+      {
+        "operation": "add",
+        "step": 12,
+        "added": "FUDQIF",
+        "score": 52.78052765548269
+      },
+      {
+        "operation": "swap",
+        "step": 1,
+        "removed": "HAMJOW",
+        "added": "GEDLIM",
+        "gain": 0.0027790141310291006,
+        "score": 52.78330666961372
+      }
+    ]
+  }
+}

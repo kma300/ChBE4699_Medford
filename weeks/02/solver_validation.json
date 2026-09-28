@@ -1,0 +1,51 @@
+{
+  "independent_method": "scipy.optimize.minimize SLSQP with analytic gradient, uniform initial estimate",
+  "scipy_version": "1.18.1",
+  "development_seed": 20260921,
+  "checks": [
+    {
+      "array": "primary",
+      "n": 23,
+      "max_abs_objective_difference": 8.862531002407081e-07,
+      "max_abs_fraction_difference": 2.4356702932326613e-07,
+      "slsqp_success_count": 21,
+      "slsqp_nonsuccess_count": 2
+    },
+    {
+      "array": "random_0",
+      "n": 23,
+      "max_abs_objective_difference": 3.1585809523448916e-09,
+      "max_abs_fraction_difference": 1.5409662075527297e-06,
+      "slsqp_success_count": 23,
+      "slsqp_nonsuccess_count": 0
+    },
+    {
+      "array": "most_ill_conditioned_random",
+      "n": 23,
+      "max_abs_objective_difference": 7.139799862443397e-11,
+      "max_abs_fraction_difference": 1.2990677965007968e-06,
+      "slsqp_success_count": 23,
+      "slsqp_nonsuccess_count": 0
+    }
+  ],
+  "noiseless_checks": [
+    {
+      "array": "primary",
+      "mixtures_including_pure_vertices": 1008,
+      "max_abs_fraction_error": 1.3801459974871477e-14
+    },
+    {
+      "array": "random_0",
+      "mixtures_including_pure_vertices": 1008,
+      "max_abs_fraction_error": 9.592326932761353e-14
+    },
+    {
+      "array": "most_ill_conditioned_random",
+      "mixtures_including_pure_vertices": 1008,
+      "max_abs_fraction_error": 2.632714879435838e-11
+    }
+  ],
+  "analytic_signed_observation_check": "passed",
+  "final_set_generated": false,
+  "all_checks_passed": true
+}

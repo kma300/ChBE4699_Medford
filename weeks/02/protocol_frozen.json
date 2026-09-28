@@ -1,0 +1,65 @@
+{
+  "study": "Eight-gas ethylene-cracker synthetic dilute-limit benchmark",
+  "authorization": "Ken approved the plain-language experiment proposal: yes sounds good.",
+  "benchmark_script_sha256": "fdedcee2ab087ac91e40e774a9b6071f2a2f29353949b51db22177741962222c",
+  "source_sha256": "a748213897204191619a43c6d6c08f80e8109b943e936233a1a0bf9e96f5d938",
+  "designs_sha256": "f10d72a13235cba82c31ffb5628a2c066bd1b45b562118590582449845dc7ca8",
+  "random_membership_sha256": "d3b95fc2817b70c4e81cb5a5c58e22f9a663e0c2fd23358df53816317c9c1a3e",
+  "selected_mofs": [
+    "CISMAT01",
+    "FERHAN",
+    "FUDQIF",
+    "GEDLIM",
+    "GEHSAN",
+    "GIZJOP",
+    "LOFZUB",
+    "MEJQEZ",
+    "MOGVAG",
+    "PUQXUV",
+    "RURPEA",
+    "XUWVEQ"
+  ],
+  "gases": [
+    "methane",
+    "ethane",
+    "ethene",
+    "propane",
+    "propene",
+    "isobutane",
+    "isopentane",
+    "2-pentene"
+  ],
+  "temperature_K": 300,
+  "K_units": "mol kg^-1 Pa^-1",
+  "model": "Ideal additive molar uptake slope K @ x, sum(x)=1, x>=0; total represented eight-gas composition only.",
+  "g_ref": 0.0467015,
+  "primary_relative_full_scale_noise": 0.01,
+  "primary_common_floor_fraction_of_g_ref": 0.001,
+  "seeds": {
+    "random_arrays": 20260920,
+    "development": 20260921,
+    "final": 20260922
+  },
+  "mixture_counts_per_set": {
+    "all_eight_dirichlet_ones": 500,
+    "subsets_2_through_7": 400,
+    "feed_product_stress_each_pair": 50
+  },
+  "feed_product_stress_sampling": "50 equal-width ratio bins over product share 1%-99%, one uniform draw per bin, independently per set; pair occupies 80% of mixture.",
+  "drift": "One target per mixture, target index = mixture index mod 8; +1 and +5 pp; proportional rescaling of other gases; infeasible cases excluded and counted. Independent post-change Gaussian noise; base noise reused as before-change observation. Same noise per MOF and case across arrays.",
+  "solver": "All simplex faces, descending support size; direct SVD affine least squares; pseudoinverse relative singular cutoff 1e-13; feasibility tolerance 1e-10; early-exit KKT tolerance 1e-12*(1+max(abs(Y@W))). If no early certificate, choose the minimum residual over every feasible face, require scaled KKT<=1e-9 and record fallback count. Only roundoff negative fraction cleanup, no observation clipping.",
+  "selection": "Greedy 12, best one-for-one swaps; improvement >1e-8, maximum 100; SVD logdet with ridge1e-6; alphabetical ties at absolute1e-12.",
+  "presence": "Estimate>=1% vs true>0; precision/recall, missed true ranges, no physical detection limit.",
+  "ratio": "True feed>=1%; estimated feed<1% is failure; score remaining ratios with explicit denominator; relative error only for true positive product.",
+  "final_set_generated_before_freeze": false,
+  "settings_changed_after_final": false,
+  "development_implementation_notes": [
+    "Infeasible composition changes are skipped as specified; implementation corrected before freezing.",
+    "Stress ratios use independent stratified draws instead of a repeated deterministic grid; this preserves the specified range and avoids identical development/final mixtures. Development rerun before freezing."
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}

@@ -1,0 +1,447 @@
+{
+  "stage": "development",
+  "seed": 20260921,
+  "mixtures": 1000,
+  "primary": {
+    "overall": {
+      "mae_pp": 3.471131852651223,
+      "p95_mixture_mae_pp": 9.145186417482616,
+      "worst_mixture_mae_pp": 19.228512817557572,
+      "maximum_component_error_pp": 73.39834680065081,
+      "per_gas_mae_pp": {
+        "methane": 6.611787481890054,
+        "ethane": 6.485362064842321,
+        "ethene": 9.816314973946422,
+        "propane": 1.4438462471867994,
+        "propene": 1.8992772011131864,
+        "isobutane": 0.5222961957874591,
+        "isopentane": 0.5378509742513053,
+        "2-pentene": 0.4523196821922447
+      }
+    },
+    "by_family": {
+      "all_eight": {
+        "mae_pp": 3.814094110731812,
+        "p95_mixture_mae_pp": 8.713161173068006,
+        "worst_mixture_mae_pp": 12.107512822956455,
+        "maximum_component_error_pp": 45.76090829354289,
+        "per_gas_mae_pp": {
+          "methane": 7.3091967583798905,
+          "ethane": 7.006705936120597,
+          "ethene": 10.52714357453977,
+          "propane": 1.714161763578438,
+          "propene": 2.274052964855071,
+          "isobutane": 0.590214291754248,
+          "isopentane": 0.6001158375210723,
+          "2-pentene": 0.49116175910542614
+        }
+      },
+      "ethane_ethylene": {
+        "mae_pp": 6.140161252877515,
+        "p95_mixture_mae_pp": 14.101546437767894,
+        "worst_mixture_mae_pp": 19.228512817557572,
+        "maximum_component_error_pp": 73.39834680065081,
+        "per_gas_mae_pp": {
+          "methane": 10.350403396692101,
+          "ethane": 12.904395007012981,
+          "ethene": 20.002019089133103,
+          "propane": 1.7310811742708143,
+          "propene": 2.4125344253446066,
+          "isobutane": 0.5900115624580428,
+          "isopentane": 0.6678247939991044,
+          "2-pentene": 0.4630205741093558
+        }
+      },
+      "propane_propylene": {
+        "mae_pp": 2.0524408973145642,
+        "p95_mixture_mae_pp": 2.9009976675152043,
+        "worst_mixture_mae_pp": 3.108958857074592,
+        "maximum_component_error_pp": 9.223772804980243,
+        "per_gas_mae_pp": {
+          "methane": 3.37247916878769,
+          "ethane": 4.325157920103266,
+          "ethene": 3.4211114880765248,
+          "propane": 1.647163486509524,
+          "propene": 1.866786745169191,
+          "isobutane": 0.6411726735727076,
+          "isopentane": 0.6799424705785669,
+          "2-pentene": 0.46571322571904333
+        }
+      },
+      "subset_2_to_7": {
+        "mae_pp": 2.886136724439283,
+        "p95_mixture_mae_pp": 8.765940222286101,
+        "worst_mixture_mae_pp": 16.926675331997327,
+        "maximum_component_error_pp": 64.46785746908952,
+        "per_gas_mae_pp": {
+          "methane": 5.677612436065321,
+          "ethane": 5.301328626065557,
+          "ethene": 8.453966644540081,
+          "propane": 1.0446328308964121,
+          "propene": 1.3707116503999053,
+          "isobutane": 0.4140745952719956,
+          "isopentane": 0.426011730654715,
+          "2-pentene": 0.40075528162027974
+        }
+      }
+    },
+    "presence_per_gas": [
+      {
+        "gas": "methane",
+        "tp": 570,
+        "fp": 65,
+        "fn": 266,
+        "precision": 0.8976377952755905,
+        "recall": 0.6818181818181818,
+        "missed_true_min_pp": 0.0023589781918211027,
+        "missed_true_max_pp": 34.80326417278132,
+        "missed_true_median_pp": 3.60523061159596
+      },
+      {
+        "gas": "ethane",
+        "tp": 606,
+        "fp": 44,
+        "fn": 230,
+        "precision": 0.9323076923076923,
+        "recall": 0.7248803827751196,
+        "missed_true_min_pp": 0.004160025562963518,
+        "missed_true_max_pp": 35.596369660629044,
+        "missed_true_median_pp": 4.524091536886585
+      },
+      {
+        "gas": "ethene",
+        "tp": 486,
+        "fp": 47,
+        "fn": 345,
+        "precision": 0.9118198874296435,
+        "recall": 0.5848375451263538,
+        "missed_true_min_pp": 0.04612511115955307,
+        "missed_true_max_pp": 59.88934886772482,
+        "missed_true_median_pp": 5.82640799276362
+      },
+      {
+        "gas": "propane",
+        "tp": 733,
+        "fp": 43,
+        "fn": 82,
+        "precision": 0.9445876288659794,
+        "recall": 0.8993865030674847,
+        "missed_true_min_pp": 0.0325952806053489,
+        "missed_true_max_pp": 4.172010622144249,
+        "missed_true_median_pp": 1.4606819752666558
+      },
+      {
+        "gas": "propene",
+        "tp": 751,
+        "fp": 33,
+        "fn": 89,
+        "precision": 0.9579081632653061,
+        "recall": 0.8940476190476191,
+        "missed_true_min_pp": 0.03315424940469658,
+        "missed_true_max_pp": 6.288819238166771,
+        "missed_true_median_pp": 1.9098786184205852
+      },
+      {
+        "gas": "isobutane",
+        "tp": 803,
+        "fp": 10,
+        "fn": 40,
+        "precision": 0.9876998769987699,
+        "recall": 0.9525504151838672,
+        "missed_true_min_pp": 0.054337151873256544,
+        "missed_true_max_pp": 2.3987922426943857,
+        "missed_true_median_pp": 0.7752391455276262
+      },
+      {
+        "gas": "isopentane",
+        "tp": 777,
+        "fp": 8,
+        "fn": 59,
+        "precision": 0.9898089171974522,
+        "recall": 0.9294258373205742,
+        "missed_true_min_pp": 0.02023023067957413,
+        "missed_true_max_pp": 2.3115899461689993,
+        "missed_true_median_pp": 0.6207282769933078
+      },
+      {
+        "gas": "2-pentene",
+        "tp": 776,
+        "fp": 9,
+        "fn": 53,
+        "precision": 0.9885350318471338,
+        "recall": 0.9360675512665863,
+        "missed_true_min_pp": 0.004195291921715406,
+        "missed_true_max_pp": 2.3678554777625425,
+        "missed_true_median_pp": 0.4829311403410234
+      }
+    ],
+    "presence_micro": {
+      "precision": 0.9550425273390036,
+      "recall": 0.8253825382538253,
+      "tp": 5502,
+      "fp": 259,
+      "fn": 1164
+    },
+    "ratios": [
+      {
+        "ratio": "ethylene/ethane",
+        "true_feed_below_1pct_n": 209,
+        "eligible_n": 791,
+        "estimated_feed_below_1pct_failures": 199,
+        "scored_n": 592,
+        "absolute_error_mean": 2.0733514623242386,
+        "absolute_error_median": 0.6408698153732708,
+        "relative_error_mean_pct_positive_product": 400.28214379492533,
+        "relative_error_median_pct_positive_product": 100.0,
+        "relative_error_p95_pct_positive_product": 1158.2366050244625,
+        "relative_error_scored_n": 512,
+        "zero_product_n": 80,
+        "zero_product_absolute_ratio_error_mean": 0.5576953983747167
+      },
+      {
+        "ratio": "propylene/propane",
+        "true_feed_below_1pct_n": 225,
+        "eligible_n": 775,
+        "estimated_feed_below_1pct_failures": 52,
+        "scored_n": 723,
+        "absolute_error_mean": 0.8866887211994423,
+        "absolute_error_median": 0.21943640727057456,
+        "relative_error_mean_pct_positive_product": 177.37150700832805,
+        "relative_error_median_pct_positive_product": 40.28277200243071,
+        "relative_error_p95_pct_positive_product": 235.32388142164825,
+        "relative_error_scored_n": 654,
+        "zero_product_n": 69,
+        "zero_product_absolute_ratio_error_mean": 0.07221684353105158
+      }
+    ]
+  },
+  "random_baseline": {
+    "n": 200,
+    "mae_pp_min": 5.493288755138314,
+    "mae_pp_p05": 6.99138625276649,
+    "mae_pp_median": 9.479196605817286,
+    "mae_pp_p95": 12.632746858827293,
+    "mae_pp_max": 13.520860204396584,
+    "selected_better_than_n": 200,
+    "selected_mae_reduction_vs_random_median_pct": 63.381581826027066
+  },
+  "primary_drift": [
+    {
+      "array": "selected",
+      "gas_changed": "balanced_cycle_all_8",
+      "delta_pp": 1.0,
+      "feasible_n": 1000,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.351507117238954,
+      "target_change_mae_pp": 4.365457477685877,
+      "target_change_error_p95_pp": 20.149092160245278,
+      "target_estimated_change_mean_pp": 0.14779727854916686,
+      "target_positive_change_fraction": 0.599
+    },
+    {
+      "array": "selected",
+      "gas_changed": "methane",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.078312703874914,
+      "target_change_mae_pp": 7.843868731807347,
+      "target_change_error_p95_pp": 23.33282364287372,
+      "target_estimated_change_mean_pp": -0.10742175741494449,
+      "target_positive_change_fraction": 0.392
+    },
+    {
+      "array": "selected",
+      "gas_changed": "ethane",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.75813951883248,
+      "target_change_mae_pp": 8.514135072731074,
+      "target_change_error_p95_pp": 25.088653857715645,
+      "target_estimated_change_mean_pp": -0.6275751572887112,
+      "target_positive_change_fraction": 0.368
+    },
+    {
+      "array": "selected",
+      "gas_changed": "ethene",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.577668583093091,
+      "target_change_mae_pp": 11.631371908859489,
+      "target_change_error_p95_pp": 35.49062497203324,
+      "target_estimated_change_mean_pp": -2.3637804493140644,
+      "target_positive_change_fraction": 0.336
+    },
+    {
+      "array": "selected",
+      "gas_changed": "propane",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 3.936103270995882,
+      "target_change_mae_pp": 2.0123225148524684,
+      "target_change_error_p95_pp": 5.971160779505779,
+      "target_estimated_change_mean_pp": 1.1160587332534875,
+      "target_positive_change_fraction": 0.64
+    },
+    {
+      "array": "selected",
+      "gas_changed": "propene",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.367698439343727,
+      "target_change_mae_pp": 2.708662675862826,
+      "target_change_error_p95_pp": 6.605032400431966,
+      "target_estimated_change_mean_pp": 0.5807865528712034,
+      "target_positive_change_fraction": 0.568
+    },
+    {
+      "array": "selected",
+      "gas_changed": "isobutane",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.383232580724004,
+      "target_change_mae_pp": 0.8415044438355535,
+      "target_change_error_p95_pp": 1.9809765789476002,
+      "target_estimated_change_mean_pp": 0.7637521628190647,
+      "target_positive_change_fraction": 0.8
+    },
+    {
+      "array": "selected",
+      "gas_changed": "isopentane",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.375800743962305,
+      "target_change_mae_pp": 0.7751613989165617,
+      "target_change_error_p95_pp": 1.9257947156270805,
+      "target_estimated_change_mean_pp": 0.9159541691102407,
+      "target_positive_change_fraction": 0.808
+    },
+    {
+      "array": "selected",
+      "gas_changed": "2-pentene",
+      "delta_pp": 1.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.335101097085235,
+      "target_change_mae_pp": 0.596633074621697,
+      "target_change_error_p95_pp": 1.4999155481822974,
+      "target_estimated_change_mean_pp": 0.9046039743570581,
+      "target_positive_change_fraction": 0.88
+    },
+    {
+      "array": "selected",
+      "gas_changed": "balanced_cycle_all_8",
+      "delta_pp": 5.0,
+      "feasible_n": 999,
+      "infeasible_n": 1,
+      "all_component_change_mae_pp": 4.511622231550453,
+      "target_change_mae_pp": 5.002289922224669,
+      "target_change_error_p95_pp": 21.153007774689097,
+      "target_estimated_change_mean_pp": 4.4578900829487855,
+      "target_positive_change_fraction": 0.8038038038038038
+    },
+    {
+      "array": "selected",
+      "gas_changed": "methane",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.584243056117034,
+      "target_change_mae_pp": 9.821313370546264,
+      "target_change_error_p95_pp": 25.11428977615185,
+      "target_estimated_change_mean_pp": 4.831035933857048,
+      "target_positive_change_fraction": 0.552
+    },
+    {
+      "array": "selected",
+      "gas_changed": "ethane",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.401480040803761,
+      "target_change_mae_pp": 8.989156180668667,
+      "target_change_error_p95_pp": 24.7822385443606,
+      "target_estimated_change_mean_pp": 3.868911812608208,
+      "target_positive_change_fraction": 0.568
+    },
+    {
+      "array": "selected",
+      "gas_changed": "ethene",
+      "delta_pp": 5.0,
+      "feasible_n": 124,
+      "infeasible_n": 1,
+      "all_component_change_mae_pp": 4.7782337038637674,
+      "target_change_mae_pp": 13.354313645953258,
+      "target_change_error_p95_pp": 38.5147163766105,
+      "target_estimated_change_mean_pp": 2.468061701056922,
+      "target_positive_change_fraction": 0.47580645161290325
+    },
+    {
+      "array": "selected",
+      "gas_changed": "propane",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 3.850216113865882,
+      "target_change_mae_pp": 2.483416472687893,
+      "target_change_error_p95_pp": 5.7199050403294,
+      "target_estimated_change_mean_pp": 4.8852456099431985,
+      "target_positive_change_fraction": 0.96
+    },
+    {
+      "array": "selected",
+      "gas_changed": "propene",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.34552134587794,
+      "target_change_mae_pp": 3.201017633682462,
+      "target_change_error_p95_pp": 8.512593086131156,
+      "target_estimated_change_mean_pp": 4.927328195775747,
+      "target_positive_change_fraction": 0.872
+    },
+    {
+      "array": "selected",
+      "gas_changed": "isobutane",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.7225836011087505,
+      "target_change_mae_pp": 0.7383388660517439,
+      "target_change_error_p95_pp": 1.8091889396385725,
+      "target_estimated_change_mean_pp": 4.860606423426312,
+      "target_positive_change_fraction": 1.0
+    },
+    {
+      "array": "selected",
+      "gas_changed": "isopentane",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.8578766612304864,
+      "target_change_mae_pp": 0.824452218249441,
+      "target_change_error_p95_pp": 1.954389092332158,
+      "target_estimated_change_mean_pp": 4.905352867430767,
+      "target_positive_change_fraction": 1.0
+    },
+    {
+      "array": "selected",
+      "gas_changed": "2-pentene",
+      "delta_pp": 5.0,
+      "feasible_n": 125,
+      "infeasible_n": 0,
+      "all_component_change_mae_pp": 4.554956221314507,
+      "target_change_mae_pp": 0.673127179747455,
+      "target_change_error_p95_pp": 1.5026362217009854,
+      "target_estimated_change_mean_pp": 4.900659492436944,
+      "target_positive_change_fraction": 1.0
+    }
+  ],
+  "source_unchanged": true
+}
