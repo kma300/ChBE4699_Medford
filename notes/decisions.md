@@ -60,3 +60,19 @@
 - The representative full outlet composition and concentration ranges to use when moving beyond pure-component Henry coefficients, preferably from plant GC data or a documented process simulation.
 - Whether the first model should represent normal operation only or also startup, shutdown, decoking, and upset states.
 - Selection of the identities of the initial 12 MOF sensor materials after the target-gas panel, outlet-composition scenarios, and discrimination objective are fixed.
+
+## Week 3 (2026-09-28)
+
+### Ken's decisions
+
+- Ken's decision, recorded word for word: "Week 3 is what we're doing." (follow the plan promised to Dr. Medford on 2026-09-21)
+- Ken's decision, recorded word for word: "We're using the genetic algorithm that we're doing to solve based off of what Medford talked about, right? Just use the agentic to solve that and see what we can do."
+- Ken approved the week-3 plan: targets, ceiling check, single-MOF swaps, genetic algorithm, gradient sensitivity map, relaxed gradient design, 1-2 slides, a Slack draft for his approval, and the reusable weekly pipeline (`python3 -m src.weekly N`, `/medford-week`).
+
+### AI decisions
+
+- Proposed targets, to confirm with Dr. Medford: ethylene and ethane mean absolute error of at most 2 pp each, ethylene/ethane ratio error of at most 10%, and overall eight-gas error of at most 2 pp as a guard so a search cannot trade away the other gases.
+- Ratio metric: mean relative error of the ethylene/ethane ratio, capped at 100%, over mixtures where both gases are at least 5% (cracker-like). An estimated ethane of zero counts as 100%. The week-2 median metric sat flat at 100% and could not guide a search.
+- Score: the mean over targets of metric divided by target, used by the swap search and the genetic algorithm. Selection only ever sees development seed 20260921. Reported numbers use held-out seed 20260922 and a fresh seed 20260928.
+- Gradients: no autodiff library is installed (jax and torch are absent, and new dependencies need Ken's approval). The week uses the closed-form derivative of the linearized sum-to-one least-squares covariance, checked against finite differences, and central finite differences of the full constrained simulator with the noise draws held fixed.
+- Noise sweep keeps the week-2 floor-to-relative ratio (the floor is 10% of the relative noise level).

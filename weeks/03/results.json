@@ -1,0 +1,2582 @@
+{
+  "week": 3,
+  "date": "2026-09-28",
+  "runtime_s": 228.2,
+  "question": "Can a target-driven search (GA, swaps, gradient design) fix ethylene/ethane recovery?",
+  "targets": {
+    "ethene_mae_pp": 2.0,
+    "ethane_mae_pp": 2.0,
+    "ratio_err_pct": 10.0,
+    "overall_mae_pp": 2.0
+  },
+  "target_definitions": {
+    "ethene_mae_pp": "mean |error| of the ethylene mole fraction, percentage points, all 1,000 mixtures",
+    "ethane_mae_pp": "same for ethane",
+    "overall_mae_pp": "mean |error| over all 8 gases (guard)",
+    "ratio_err_pct": "mean relative error of ethylene/ethane, capped at 100%, over mixtures with both >= 5%"
+  },
+  "score": "mean over targets of metric/target (1.0 = exactly on target)",
+  "protocol": {
+    "noise": "1% of each MOF full scale, floor 0.1% of median full scale (week 2)",
+    "development_seed": 20260921,
+    "final_seed": 20260922,
+    "fresh_seed": 20260928,
+    "candidate_pool": 464,
+    "array_size": 12,
+    "development_evaluations": 104405,
+    "mixtures_per_set": 1000,
+    "ga": {
+      "population": 64,
+      "max_generations": 400,
+      "patience": 80,
+      "elite": 4,
+      "tournament": 3,
+      "mutation": "1 swap (80%) or 2 swaps",
+      "seeded_with": "week-2 array",
+      "rng_seeds": [
+        3,
+        4
+      ]
+    },
+    "versions": {
+      "python": "3.13.9",
+      "numpy": "2.3.5"
+    }
+  },
+  "designs": {
+    "week2_d_optimal": {
+      "indices": [
+        43,
+        89,
+        100,
+        114,
+        115,
+        121,
+        218,
+        227,
+        237,
+        281,
+        325,
+        444
+      ],
+      "mofs": [
+        "CISMAT01",
+        "FERHAN",
+        "FUDQIF",
+        "GEDLIM",
+        "GEHSAN",
+        "GIZJOP",
+        "LOFZUB",
+        "MEJQEZ",
+        "MOGVAG",
+        "PUQXUV",
+        "RURPEA",
+        "XUWVEQ"
+      ]
+    },
+    "swap_search": {
+      "indices": [
+        43,
+        44,
+        47,
+        92,
+        115,
+        237,
+        281,
+        322,
+        323,
+        325,
+        391,
+        444
+      ],
+      "mofs": [
+        "CISMAT01",
+        "COGWEB",
+        "CUMDIY",
+        "FIGXAW",
+        "GEHSAN",
+        "MOGVAG",
+        "PUQXUV",
+        "RUFMUA",
+        "RUFMUA01",
+        "RURPEA",
+        "VEJYUF02",
+        "XUWVEQ"
+      ]
+    },
+    "gradient_design": {
+      "indices": [
+        85,
+        92,
+        100,
+        111,
+        115,
+        121,
+        227,
+        237,
+        322,
+        323,
+        325,
+        401
+      ],
+      "mofs": [
+        "FECWOB01",
+        "FIGXAW",
+        "FUDQIF",
+        "GAXWEJ",
+        "GEHSAN",
+        "GIZJOP",
+        "MEJQEZ",
+        "MOGVAG",
+        "RUFMUA",
+        "RUFMUA01",
+        "RURPEA",
+        "WALBOC02"
+      ]
+    },
+    "genetic_algorithm": {
+      "indices": [
+        43,
+        47,
+        52,
+        89,
+        92,
+        115,
+        183,
+        237,
+        322,
+        323,
+        325,
+        444
+      ],
+      "mofs": [
+        "CISMAT01",
+        "CUMDIY",
+        "DAGDIZ",
+        "FERHAN",
+        "FIGXAW",
+        "GEHSAN",
+        "KAXQOR",
+        "MOGVAG",
+        "RUFMUA",
+        "RUFMUA01",
+        "RURPEA",
+        "XUWVEQ"
+      ]
+    }
+  },
+  "development": {
+    "week2_d_optimal": {
+      "score": 4.611691413100982,
+      "target_metrics": {
+        "overall_mae_pp": 3.471131852651219,
+        "ethane_mae_pp": 6.48536206484233,
+        "ethene_mae_pp": 9.816314973946376,
+        "ratio_err_pct": 85.60361206683966,
+        "ratio_median_pct": 100.0,
+        "ratio_within_10pct_frac": 0.025069637883008356,
+        "ethene_zeroed_frac": 0.3231197771587744,
+        "ethane_zeroed_frac": 0.19220055710306408,
+        "ratio_cases": 359
+      }
+    },
+    "swap_search": {
+      "score": 4.224101859287092,
+      "target_metrics": {
+        "overall_mae_pp": 3.325718364529864,
+        "ethane_mae_pp": 6.060897926495745,
+        "ethene_mae_pp": 8.809340973462628,
+        "ratio_err_pct": 77.98428804904249,
+        "ratio_median_pct": 100.0,
+        "ratio_within_10pct_frac": 0.055710306406685235,
+        "ethene_zeroed_frac": 0.2757660167130919,
+        "ethane_zeroed_frac": 0.15598885793871867,
+        "ratio_cases": 359
+      }
+    },
+    "gradient_design": {
+      "score": 4.92809438791584,
+      "target_metrics": {
+        "overall_mae_pp": 4.803658752062035,
+        "ethane_mae_pp": 7.173436648900873,
+        "ethene_mae_pp": 10.237894171703722,
+        "ratio_err_pct": 86.04882765330042,
+        "ratio_median_pct": 100.0,
+        "ratio_within_10pct_frac": 0.022284122562674095,
+        "ethene_zeroed_frac": 0.3398328690807799,
+        "ethane_zeroed_frac": 0.2395543175487465,
+        "ratio_cases": 359
+      }
+    },
+    "genetic_algorithm": {
+      "score": 4.213980943872678,
+      "target_metrics": {
+        "overall_mae_pp": 3.339308850490256,
+        "ethane_mae_pp": 5.998135078141582,
+        "ethene_mae_pp": 8.757059623820892,
+        "ratio_err_pct": 78.08671999264347,
+        "ratio_median_pct": 100.0,
+        "ratio_within_10pct_frac": 0.04456824512534819,
+        "ethene_zeroed_frac": 0.2757660167130919,
+        "ethane_zeroed_frac": 0.1671309192200557,
+        "ratio_cases": 359
+      }
+    }
+  },
+  "heldout": {
+    "week2_d_optimal": {
+      "final": {
+        "score": 4.6969176199052,
+        "target_metrics": {
+          "overall_mae_pp": 3.523107160711799,
+          "ethane_mae_pp": 6.768353275667341,
+          "ethene_mae_pp": 9.91085479286104,
+          "ratio_err_pct": 86.86512865000711,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.03571428571428571,
+          "ethene_zeroed_frac": 0.40934065934065933,
+          "ethane_zeroed_frac": 0.15384615384615385,
+          "ratio_cases": 364
+        },
+        "overall_mae_pp": 3.523107160711799,
+        "per_gas_mae_pp": {
+          "methane": 6.611558197089082,
+          "ethane": 6.768353275667335,
+          "ethene": 9.910854792861052,
+          "propane": 1.5035419060220299,
+          "propene": 1.9671055166524853,
+          "isobutane": 0.5206848555287816,
+          "isopentane": 0.4760783892547868,
+          "2-pentene": 0.4266803526188315
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 233,
+            "eligible_n": 767,
+            "estimated_feed_below_1pct_failures": 176,
+            "scored_n": 591,
+            "absolute_error_mean": 1.9518961396240533,
+            "absolute_error_median": 0.6793461881420141,
+            "relative_error_mean_pct_positive_product": 1486.3594171924467,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 914.8726559523088,
+            "relative_error_scored_n": 519,
+            "zero_product_n": 72,
+            "zero_product_absolute_ratio_error_mean": 0.5851226874461051
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 219,
+            "eligible_n": 781,
+            "estimated_feed_below_1pct_failures": 43,
+            "scored_n": 738,
+            "absolute_error_mean": 0.8296798872862953,
+            "absolute_error_median": 0.18765247814046482,
+            "relative_error_mean_pct_positive_product": 107.36923452414815,
+            "relative_error_median_pct_positive_product": 41.37656893451705,
+            "relative_error_p95_pct_positive_product": 276.13028228095527,
+            "relative_error_scored_n": 655,
+            "zero_product_n": 83,
+            "zero_product_absolute_ratio_error_mean": 0.04977964113233371
+          }
+        ]
+      },
+      "fresh": {
+        "score": 4.691105109031892,
+        "target_metrics": {
+          "overall_mae_pp": 3.5673017537132137,
+          "ethane_mae_pp": 6.9435006067782705,
+          "ethene_mae_pp": 10.095511378829306,
+          "ratio_err_pct": 84.61263566467171,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.03217821782178218,
+          "ethene_zeroed_frac": 0.34405940594059403,
+          "ethane_zeroed_frac": 0.15099009900990099,
+          "ratio_cases": 404
+        },
+        "overall_mae_pp": 3.5673017537132137,
+        "per_gas_mae_pp": {
+          "methane": 6.747902248739533,
+          "ethane": 6.943500606778264,
+          "ethene": 10.095511378829341,
+          "propane": 1.4489210808845847,
+          "propene": 1.8749291119977662,
+          "isobutane": 0.5320474933135079,
+          "isopentane": 0.49077565920212846,
+          "2-pentene": 0.40482644996059797
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 199,
+            "eligible_n": 801,
+            "estimated_feed_below_1pct_failures": 186,
+            "scored_n": 615,
+            "absolute_error_mean": 2.0995165792281254,
+            "absolute_error_median": 0.6817996305030516,
+            "relative_error_mean_pct_positive_product": 497.053874996472,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1444.2691742739396,
+            "relative_error_scored_n": 546,
+            "zero_product_n": 69,
+            "zero_product_absolute_ratio_error_mean": 0.1664471284192077
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 226,
+            "eligible_n": 774,
+            "estimated_feed_below_1pct_failures": 48,
+            "scored_n": 726,
+            "absolute_error_mean": 0.8526900560100139,
+            "absolute_error_median": 0.20800949492499124,
+            "relative_error_mean_pct_positive_product": 104.05904649775569,
+            "relative_error_median_pct_positive_product": 38.282857873533935,
+            "relative_error_p95_pct_positive_product": 294.38797780298546,
+            "relative_error_scored_n": 647,
+            "zero_product_n": 79,
+            "zero_product_absolute_ratio_error_mean": 0.11582207611450153
+          }
+        ]
+      }
+    },
+    "swap_search": {
+      "final": {
+        "score": 4.611092746227423,
+        "target_metrics": {
+          "overall_mae_pp": 3.5330940929842507,
+          "ethane_mae_pp": 6.6151611211256025,
+          "ethene_mae_pp": 9.73075601828001,
+          "ratio_err_pct": 85.04865368714762,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.019230769230769232,
+          "ethene_zeroed_frac": 0.39285714285714285,
+          "ethane_zeroed_frac": 0.14560439560439561,
+          "ratio_cases": 364
+        },
+        "overall_mae_pp": 3.5330940929842507,
+        "per_gas_mae_pp": {
+          "methane": 6.201916630938069,
+          "ethane": 6.6151611211255865,
+          "ethene": 9.73075601828002,
+          "propane": 1.786930522875533,
+          "propene": 2.08988887015976,
+          "isobutane": 0.7011463494273638,
+          "isopentane": 0.731241935248989,
+          "2-pentene": 0.40771129581867144
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 233,
+            "eligible_n": 767,
+            "estimated_feed_below_1pct_failures": 179,
+            "scored_n": 588,
+            "absolute_error_mean": 1.7413704746525451,
+            "absolute_error_median": 0.6708499527355679,
+            "relative_error_mean_pct_positive_product": 657.3617565191735,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1133.0202091495635,
+            "relative_error_scored_n": 517,
+            "zero_product_n": 71,
+            "zero_product_absolute_ratio_error_mean": 0.3723203781285783
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 219,
+            "eligible_n": 781,
+            "estimated_feed_below_1pct_failures": 45,
+            "scored_n": 736,
+            "absolute_error_mean": 0.94770898701381,
+            "absolute_error_median": 0.21167545504387736,
+            "relative_error_mean_pct_positive_product": 119.77250153167249,
+            "relative_error_median_pct_positive_product": 45.28594956374228,
+            "relative_error_p95_pct_positive_product": 277.49675312142335,
+            "relative_error_scored_n": 650,
+            "zero_product_n": 86,
+            "zero_product_absolute_ratio_error_mean": 0.07176716873618917
+          }
+        ]
+      },
+      "fresh": {
+        "score": 4.582051088425085,
+        "target_metrics": {
+          "overall_mae_pp": 3.5549846487595214,
+          "ethane_mae_pp": 6.7611729546233885,
+          "ethene_mae_pp": 9.65278223815056,
+          "ratio_err_pct": 83.43734432933604,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.027227722772277228,
+          "ethene_zeroed_frac": 0.33910891089108913,
+          "ethane_zeroed_frac": 0.14356435643564355,
+          "ratio_cases": 404
+        },
+        "overall_mae_pp": 3.5549846487595214,
+        "per_gas_mae_pp": {
+          "methane": 6.3907803506784076,
+          "ethane": 6.761172954623384,
+          "ethene": 9.652782238150591,
+          "propane": 1.7988635710001257,
+          "propene": 2.0654740130858156,
+          "isobutane": 0.6510826429087905,
+          "isopentane": 0.7167947029971151,
+          "2-pentene": 0.4029267166319468
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 199,
+            "eligible_n": 801,
+            "estimated_feed_below_1pct_failures": 184,
+            "scored_n": 617,
+            "absolute_error_mean": 1.9742647817348928,
+            "absolute_error_median": 0.692686206130557,
+            "relative_error_mean_pct_positive_product": 528.8115898183617,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1625.7614192604663,
+            "relative_error_scored_n": 547,
+            "zero_product_n": 70,
+            "zero_product_absolute_ratio_error_mean": 0.6349537785741758
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 226,
+            "eligible_n": 774,
+            "estimated_feed_below_1pct_failures": 64,
+            "scored_n": 710,
+            "absolute_error_mean": 0.8506954095538163,
+            "absolute_error_median": 0.2515788696470074,
+            "relative_error_mean_pct_positive_product": 123.74669896998861,
+            "relative_error_median_pct_positive_product": 46.854487845827244,
+            "relative_error_p95_pct_positive_product": 267.7760368560743,
+            "relative_error_scored_n": 634,
+            "zero_product_n": 76,
+            "zero_product_absolute_ratio_error_mean": 0.14746176237413033
+          }
+        ]
+      }
+    },
+    "gradient_design": {
+      "final": {
+        "score": 5.163924997180303,
+        "target_metrics": {
+          "overall_mae_pp": 5.0900157850669165,
+          "ethane_mae_pp": 7.965198803798381,
+          "ethene_mae_pp": 10.904172935547354,
+          "ratio_err_pct": 86.7600622651489,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.03021978021978022,
+          "ethene_zeroed_frac": 0.40384615384615385,
+          "ethane_zeroed_frac": 0.17857142857142858,
+          "ratio_cases": 364
+        },
+        "overall_mae_pp": 5.0900157850669165,
+        "per_gas_mae_pp": {
+          "methane": 9.206294140564049,
+          "ethane": 7.965198803798368,
+          "ethene": 10.90417293554737,
+          "propane": 1.715636429083576,
+          "propene": 2.225356302574835,
+          "isobutane": 1.306233140175672,
+          "isopentane": 6.8893929282713025,
+          "2-pentene": 0.5078416005201959
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 233,
+            "eligible_n": 767,
+            "estimated_feed_below_1pct_failures": 219,
+            "scored_n": 548,
+            "absolute_error_mean": 2.1465135432149625,
+            "absolute_error_median": 0.7548041560547369,
+            "relative_error_mean_pct_positive_product": 441.1090968575208,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1462.6622143877519,
+            "relative_error_scored_n": 485,
+            "zero_product_n": 63,
+            "zero_product_absolute_ratio_error_mean": 1.100687464490308
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 219,
+            "eligible_n": 781,
+            "estimated_feed_below_1pct_failures": 47,
+            "scored_n": 734,
+            "absolute_error_mean": 0.945003119454101,
+            "absolute_error_median": 0.20153651102117429,
+            "relative_error_mean_pct_positive_product": 118.1598901855713,
+            "relative_error_median_pct_positive_product": 42.988758978926896,
+            "relative_error_p95_pct_positive_product": 286.15703957876366,
+            "relative_error_scored_n": 650,
+            "zero_product_n": 84,
+            "zero_product_absolute_ratio_error_mean": 0.06914976051249068
+          }
+        ]
+      },
+      "fresh": {
+        "score": 4.956043731874395,
+        "target_metrics": {
+          "overall_mae_pp": 4.88683345884929,
+          "ethane_mae_pp": 7.6777935227168745,
+          "ethene_mae_pp": 10.204588717673227,
+          "ratio_err_pct": 84.39567077877885,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.0297029702970297,
+          "ethene_zeroed_frac": 0.3712871287128713,
+          "ethane_zeroed_frac": 0.16336633663366337,
+          "ratio_cases": 404
+        },
+        "overall_mae_pp": 4.88683345884929,
+        "per_gas_mae_pp": {
+          "methane": 8.735377062480612,
+          "ethane": 7.677793522716861,
+          "ethene": 10.204588717673245,
+          "propane": 1.7454101993572837,
+          "propene": 2.246153500077776,
+          "isobutane": 1.2712931681465205,
+          "isopentane": 6.688040873069845,
+          "2-pentene": 0.5260106272722268
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 199,
+            "eligible_n": 801,
+            "estimated_feed_below_1pct_failures": 209,
+            "scored_n": 592,
+            "absolute_error_mean": 1.9218247924950989,
+            "absolute_error_median": 0.601395970720447,
+            "relative_error_mean_pct_positive_product": 501.26879661779475,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1218.472294688653,
+            "relative_error_scored_n": 526,
+            "zero_product_n": 66,
+            "zero_product_absolute_ratio_error_mean": 0.19726512997110765
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 226,
+            "eligible_n": 774,
+            "estimated_feed_below_1pct_failures": 53,
+            "scored_n": 721,
+            "absolute_error_mean": 0.967974967647232,
+            "absolute_error_median": 0.26070873945240786,
+            "relative_error_mean_pct_positive_product": 123.04311889546506,
+            "relative_error_median_pct_positive_product": 44.86526808924471,
+            "relative_error_p95_pct_positive_product": 286.4889097225017,
+            "relative_error_scored_n": 643,
+            "zero_product_n": 78,
+            "zero_product_absolute_ratio_error_mean": 0.23192509976621198
+          }
+        ]
+      }
+    },
+    "genetic_algorithm": {
+      "final": {
+        "score": 4.539314320480105,
+        "target_metrics": {
+          "overall_mae_pp": 3.5066499340233506,
+          "ethane_mae_pp": 6.526632068682956,
+          "ethene_mae_pp": 9.534176874123784,
+          "ratio_err_pct": 83.73527843505373,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.019230769230769232,
+          "ethene_zeroed_frac": 0.38461538461538464,
+          "ethane_zeroed_frac": 0.15384615384615385,
+          "ratio_cases": 364
+        },
+        "overall_mae_pp": 3.5066499340233506,
+        "per_gas_mae_pp": {
+          "methane": 6.239754691517897,
+          "ethane": 6.526632068682952,
+          "ethene": 9.534176874123801,
+          "propane": 1.7283039376169038,
+          "propene": 2.022967714926213,
+          "isobutane": 0.9306943010982717,
+          "isopentane": 0.686945266988502,
+          "2-pentene": 0.3837246172322576
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 233,
+            "eligible_n": 767,
+            "estimated_feed_below_1pct_failures": 177,
+            "scored_n": 590,
+            "absolute_error_mean": 2.0553510771301062,
+            "absolute_error_median": 0.6331414992781743,
+            "relative_error_mean_pct_positive_product": 430.35500600939184,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1006.5075657534541,
+            "relative_error_scored_n": 516,
+            "zero_product_n": 74,
+            "zero_product_absolute_ratio_error_mean": 1.0362899538294932
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 219,
+            "eligible_n": 781,
+            "estimated_feed_below_1pct_failures": 46,
+            "scored_n": 735,
+            "absolute_error_mean": 0.8968386642175221,
+            "absolute_error_median": 0.19220908626301805,
+            "relative_error_mean_pct_positive_product": 111.98029635586403,
+            "relative_error_median_pct_positive_product": 39.34132325681318,
+            "relative_error_p95_pct_positive_product": 296.7595920869132,
+            "relative_error_scored_n": 649,
+            "zero_product_n": 86,
+            "zero_product_absolute_ratio_error_mean": 0.07183285832302976
+          }
+        ]
+      },
+      "fresh": {
+        "score": 4.526052324442242,
+        "target_metrics": {
+          "overall_mae_pp": 3.5651738115869382,
+          "ethane_mae_pp": 6.731902766342617,
+          "ethene_mae_pp": 9.519601673302608,
+          "ratio_err_pct": 81.95870172152887,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.027227722772277228,
+          "ethene_zeroed_frac": 0.3415841584158416,
+          "ethane_zeroed_frac": 0.13861386138613863,
+          "ratio_cases": 404
+        },
+        "overall_mae_pp": 3.5651738115869382,
+        "per_gas_mae_pp": {
+          "methane": 6.3395114731279385,
+          "ethane": 6.7319027663426105,
+          "ethene": 9.519601673302628,
+          "propane": 1.8198930633290191,
+          "propene": 2.062871036553141,
+          "isobutane": 0.9182143118725512,
+          "isopentane": 0.7263785615509717,
+          "2-pentene": 0.40301760661663927
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 199,
+            "eligible_n": 801,
+            "estimated_feed_below_1pct_failures": 192,
+            "scored_n": 609,
+            "absolute_error_mean": 1.929593419749365,
+            "absolute_error_median": 0.5941811114124768,
+            "relative_error_mean_pct_positive_product": 403.2180057178916,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1276.5153357965814,
+            "relative_error_scored_n": 540,
+            "zero_product_n": 69,
+            "zero_product_absolute_ratio_error_mean": 0.6517817002179805
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 226,
+            "eligible_n": 774,
+            "estimated_feed_below_1pct_failures": 59,
+            "scored_n": 715,
+            "absolute_error_mean": 0.9183219871317185,
+            "absolute_error_median": 0.2545425537203271,
+            "relative_error_mean_pct_positive_product": 112.91761999843878,
+            "relative_error_median_pct_positive_product": 45.596606150467956,
+            "relative_error_p95_pct_positive_product": 260.8861373377462,
+            "relative_error_scored_n": 637,
+            "zero_product_n": 78,
+            "zero_product_absolute_ratio_error_mean": 0.12447238219349795
+          }
+        ]
+      }
+    },
+    "all_464": {
+      "final": {
+        "score": 4.151086240982522,
+        "target_metrics": {
+          "overall_mae_pp": 2.83000750722045,
+          "ethane_mae_pp": 5.6244337695677915,
+          "ethene_mae_pp": 8.54608499794431,
+          "ratio_err_pct": 81.04081826563812,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.04120879120879121,
+          "ethene_zeroed_frac": 0.3598901098901099,
+          "ethane_zeroed_frac": 0.12637362637362637,
+          "ratio_cases": 364
+        },
+        "overall_mae_pp": 2.83000750722045,
+        "per_gas_mae_pp": {
+          "methane": 5.334043948219418,
+          "ethane": 5.624433769567776,
+          "ethene": 8.546084997944325,
+          "propane": 1.141069999849202,
+          "propene": 1.606267655650461,
+          "isobutane": 0.24460546282633136,
+          "isopentane": 0.07731059433383614,
+          "2-pentene": 0.06624362937224858
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 233,
+            "eligible_n": 767,
+            "estimated_feed_below_1pct_failures": 162,
+            "scored_n": 605,
+            "absolute_error_mean": 1.8281176662340983,
+            "absolute_error_median": 0.6520661624346726,
+            "relative_error_mean_pct_positive_product": 419.4963411548365,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1252.7332465054087,
+            "relative_error_scored_n": 531,
+            "zero_product_n": 74,
+            "zero_product_absolute_ratio_error_mean": 0.7042182506833591
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 219,
+            "eligible_n": 781,
+            "estimated_feed_below_1pct_failures": 26,
+            "scored_n": 755,
+            "absolute_error_mean": 0.7559256956710847,
+            "absolute_error_median": 0.18238775907697954,
+            "relative_error_mean_pct_positive_product": 83.44741971079273,
+            "relative_error_median_pct_positive_product": 32.27424435062183,
+            "relative_error_p95_pct_positive_product": 191.46665563924705,
+            "relative_error_scored_n": 670,
+            "zero_product_n": 85,
+            "zero_product_absolute_ratio_error_mean": 0.1174441963316681
+          }
+        ]
+      },
+      "fresh": {
+        "score": 4.12448421159912,
+        "target_metrics": {
+          "overall_mae_pp": 2.8128727235434945,
+          "ethane_mae_pp": 5.76512591566561,
+          "ethene_mae_pp": 8.489497371357782,
+          "ratio_err_pct": 79.6418884111304,
+          "ratio_median_pct": 100.0,
+          "ratio_within_10pct_frac": 0.05198019801980198,
+          "ethene_zeroed_frac": 0.30445544554455445,
+          "ethane_zeroed_frac": 0.10891089108910891,
+          "ratio_cases": 404
+        },
+        "overall_mae_pp": 2.8128727235434945,
+        "per_gas_mae_pp": {
+          "methane": 5.197821994861772,
+          "ethane": 5.765125915665601,
+          "ethene": 8.4894973713578,
+          "propane": 1.125136276385196,
+          "propene": 1.5303695455280313,
+          "isobutane": 0.24826289067407264,
+          "isopentane": 0.0776853465481396,
+          "2-pentene": 0.06908244732734833
+        },
+        "week2_style_ratios": [
+          {
+            "ratio": "ethylene/ethane",
+            "true_feed_below_1pct_n": 199,
+            "eligible_n": 801,
+            "estimated_feed_below_1pct_failures": 172,
+            "scored_n": 629,
+            "absolute_error_mean": 1.9685225464274339,
+            "absolute_error_median": 0.6127258271073186,
+            "relative_error_mean_pct_positive_product": 698.4861543352796,
+            "relative_error_median_pct_positive_product": 100.0,
+            "relative_error_p95_pct_positive_product": 1146.4849870922822,
+            "relative_error_scored_n": 558,
+            "zero_product_n": 71,
+            "zero_product_absolute_ratio_error_mean": 0.2631098952419816
+          },
+          {
+            "ratio": "propylene/propane",
+            "true_feed_below_1pct_n": 226,
+            "eligible_n": 774,
+            "estimated_feed_below_1pct_failures": 35,
+            "scored_n": 739,
+            "absolute_error_mean": 0.727585939247526,
+            "absolute_error_median": 0.1662499055169643,
+            "relative_error_mean_pct_positive_product": 91.60235324948576,
+            "relative_error_median_pct_positive_product": 32.61564632469573,
+            "relative_error_p95_pct_positive_product": 173.91966350492334,
+            "relative_error_scored_n": 661,
+            "zero_product_n": 78,
+            "zero_product_absolute_ratio_error_mean": 0.09321758460535036
+          }
+        ]
+      }
+    }
+  },
+  "random_baseline_final": {
+    "ethene_mae_pp": {
+      "median": 14.45141095946527,
+      "p05": 12.911712993078362,
+      "p95": 17.223931757026914,
+      "min": 12.444406886717939
+    },
+    "ethane_mae_pp": {
+      "median": 15.831535809647038,
+      "p05": 13.101013047459203,
+      "p95": 17.5378861245753,
+      "min": 10.21676134178938
+    },
+    "ratio_err_pct": {
+      "median": 98.48728158078819,
+      "p05": 95.18878311445297,
+      "p95": 99.80798785582714,
+      "min": 89.43107222239382
+    },
+    "overall_mae_pp": {
+      "median": 9.556735546858668,
+      "p05": 7.002340562194729,
+      "p95": 12.58422591116945,
+      "min": 5.541673185915012
+    },
+    "score": {
+      "median": 7.5507998111750005,
+      "p05": 6.663928501754091,
+      "p95": 8.120897903399133,
+      "min": 5.761131982362637
+    },
+    "week2_d_optimal_beats_n_of_200": 200,
+    "swap_search_beats_n_of_200": 200,
+    "gradient_design_beats_n_of_200": 200,
+    "genetic_algorithm_beats_n_of_200": 200
+  },
+  "ga_runs": [
+    {
+      "rng_seed": 3,
+      "indices": [
+        43,
+        54,
+        92,
+        115,
+        203,
+        222,
+        237,
+        322,
+        323,
+        325,
+        391,
+        444
+      ],
+      "development_score": 4.261593837135544,
+      "generations": 395,
+      "history": [
+        {
+          "generation": 1,
+          "best_score": 4.611691413100982,
+          "median_score": 7.201370482038717
+        },
+        {
+          "generation": 11,
+          "best_score": 4.485442195445174,
+          "median_score": 4.641665500827422
+        },
+        {
+          "generation": 21,
+          "best_score": 4.454192623034423,
+          "median_score": 4.754682606743943
+        },
+        {
+          "generation": 31,
+          "best_score": 4.35425217636571,
+          "median_score": 4.699130039702631
+        },
+        {
+          "generation": 41,
+          "best_score": 4.332634196135954,
+          "median_score": 4.56402888794121
+        },
+        {
+          "generation": 51,
+          "best_score": 4.320441414787988,
+          "median_score": 4.612231444083349
+        },
+        {
+          "generation": 61,
+          "best_score": 4.315844128315448,
+          "median_score": 4.630230780042634
+        },
+        {
+          "generation": 71,
+          "best_score": 4.3089994338547655,
+          "median_score": 4.71641197456107
+        },
+        {
+          "generation": 81,
+          "best_score": 4.304735475845606,
+          "median_score": 4.538452443214116
+        },
+        {
+          "generation": 91,
+          "best_score": 4.304735475845606,
+          "median_score": 4.583588779899855
+        },
+        {
+          "generation": 101,
+          "best_score": 4.304735475845606,
+          "median_score": 4.568910459559024
+        },
+        {
+          "generation": 111,
+          "best_score": 4.304735475845606,
+          "median_score": 4.613585911630545
+        },
+        {
+          "generation": 121,
+          "best_score": 4.304735475845606,
+          "median_score": 4.575303844244555
+        },
+        {
+          "generation": 131,
+          "best_score": 4.302527467618306,
+          "median_score": 4.567087674043009
+        },
+        {
+          "generation": 141,
+          "best_score": 4.302527467618306,
+          "median_score": 4.602611091976557
+        },
+        {
+          "generation": 151,
+          "best_score": 4.302527467618306,
+          "median_score": 4.583336009314577
+        },
+        {
+          "generation": 161,
+          "best_score": 4.302527467618306,
+          "median_score": 4.602257493755099
+        },
+        {
+          "generation": 171,
+          "best_score": 4.289487351994464,
+          "median_score": 4.597252150925913
+        },
+        {
+          "generation": 181,
+          "best_score": 4.289487351994464,
+          "median_score": 4.55586263985065
+        },
+        {
+          "generation": 191,
+          "best_score": 4.289487351994464,
+          "median_score": 4.563950830451001
+        },
+        {
+          "generation": 201,
+          "best_score": 4.289487351994464,
+          "median_score": 4.6042866491496115
+        },
+        {
+          "generation": 211,
+          "best_score": 4.289487351994464,
+          "median_score": 4.53199736410145
+        },
+        {
+          "generation": 221,
+          "best_score": 4.289487351994464,
+          "median_score": 4.561890527827758
+        },
+        {
+          "generation": 231,
+          "best_score": 4.289487351994464,
+          "median_score": 4.575015799434231
+        },
+        {
+          "generation": 241,
+          "best_score": 4.289487351994464,
+          "median_score": 4.547345575467261
+        },
+        {
+          "generation": 251,
+          "best_score": 4.2730160622319975,
+          "median_score": 4.527563300703097
+        },
+        {
+          "generation": 261,
+          "best_score": 4.2730160622319975,
+          "median_score": 4.549903798794963
+        },
+        {
+          "generation": 271,
+          "best_score": 4.269050587065011,
+          "median_score": 4.597786577915102
+        },
+        {
+          "generation": 281,
+          "best_score": 4.269050587065011,
+          "median_score": 4.604547729089566
+        },
+        {
+          "generation": 291,
+          "best_score": 4.269050587065011,
+          "median_score": 4.613652924027994
+        },
+        {
+          "generation": 301,
+          "best_score": 4.266759768964345,
+          "median_score": 4.60119462229528
+        },
+        {
+          "generation": 311,
+          "best_score": 4.266759768964345,
+          "median_score": 4.525800933416768
+        },
+        {
+          "generation": 321,
+          "best_score": 4.261593837135544,
+          "median_score": 4.623249202891962
+        },
+        {
+          "generation": 331,
+          "best_score": 4.261593837135544,
+          "median_score": 4.539018219164592
+        },
+        {
+          "generation": 341,
+          "best_score": 4.261593837135544,
+          "median_score": 4.5696278619191055
+        },
+        {
+          "generation": 351,
+          "best_score": 4.261593837135544,
+          "median_score": 4.538065117675891
+        },
+        {
+          "generation": 361,
+          "best_score": 4.261593837135544,
+          "median_score": 4.581641429063335
+        },
+        {
+          "generation": 371,
+          "best_score": 4.261593837135544,
+          "median_score": 4.557565003000981
+        },
+        {
+          "generation": 381,
+          "best_score": 4.261593837135544,
+          "median_score": 4.603885953945001
+        },
+        {
+          "generation": 391,
+          "best_score": 4.261593837135544,
+          "median_score": 4.526137673717303
+        },
+        {
+          "generation": 395,
+          "best_score": 4.261593837135544,
+          "median_score": 4.5953953744903675
+        }
+      ]
+    },
+    {
+      "rng_seed": 4,
+      "indices": [
+        43,
+        47,
+        52,
+        89,
+        92,
+        115,
+        237,
+        322,
+        323,
+        325,
+        366,
+        444
+      ],
+      "development_score": 4.230417029998468,
+      "generations": 340,
+      "history": [
+        {
+          "generation": 1,
+          "best_score": 4.611691413100982,
+          "median_score": 7.251107296038475
+        },
+        {
+          "generation": 11,
+          "best_score": 4.502760409863535,
+          "median_score": 4.680790954706022
+        },
+        {
+          "generation": 21,
+          "best_score": 4.437366627380335,
+          "median_score": 4.671760755927071
+        },
+        {
+          "generation": 31,
+          "best_score": 4.421020225646718,
+          "median_score": 4.617668902920596
+        },
+        {
+          "generation": 41,
+          "best_score": 4.410319751292931,
+          "median_score": 4.629648215270011
+        },
+        {
+          "generation": 51,
+          "best_score": 4.409061873924397,
+          "median_score": 4.635857347457612
+        },
+        {
+          "generation": 61,
+          "best_score": 4.409061873924397,
+          "median_score": 4.626562391381392
+        },
+        {
+          "generation": 71,
+          "best_score": 4.403214389819341,
+          "median_score": 4.659378173830229
+        },
+        {
+          "generation": 81,
+          "best_score": 4.356246113048103,
+          "median_score": 4.697268627312399
+        },
+        {
+          "generation": 91,
+          "best_score": 4.356246113048103,
+          "median_score": 4.705249861186221
+        },
+        {
+          "generation": 101,
+          "best_score": 4.356246113048103,
+          "median_score": 4.578696909336546
+        },
+        {
+          "generation": 111,
+          "best_score": 4.267190908460891,
+          "median_score": 4.609160237763004
+        },
+        {
+          "generation": 121,
+          "best_score": 4.267190908460891,
+          "median_score": 4.624074599805056
+        },
+        {
+          "generation": 131,
+          "best_score": 4.267190908460891,
+          "median_score": 4.569214947284548
+        },
+        {
+          "generation": 141,
+          "best_score": 4.265709506178653,
+          "median_score": 4.562499187109996
+        },
+        {
+          "generation": 151,
+          "best_score": 4.2613457227408595,
+          "median_score": 4.589663668450925
+        },
+        {
+          "generation": 161,
+          "best_score": 4.257999303529588,
+          "median_score": 4.581305839902388
+        },
+        {
+          "generation": 171,
+          "best_score": 4.257999303529588,
+          "median_score": 4.594249420916
+        },
+        {
+          "generation": 181,
+          "best_score": 4.257999303529588,
+          "median_score": 4.596009001946742
+        },
+        {
+          "generation": 191,
+          "best_score": 4.246205435554784,
+          "median_score": 4.555649348209181
+        },
+        {
+          "generation": 201,
+          "best_score": 4.246205435554784,
+          "median_score": 4.5193103896452005
+        },
+        {
+          "generation": 211,
+          "best_score": 4.246205435554784,
+          "median_score": 4.676031294231156
+        },
+        {
+          "generation": 221,
+          "best_score": 4.246205435554784,
+          "median_score": 4.605538701620578
+        },
+        {
+          "generation": 231,
+          "best_score": 4.246205435554784,
+          "median_score": 4.551065001180492
+        },
+        {
+          "generation": 241,
+          "best_score": 4.246205435554784,
+          "median_score": 4.590910247816631
+        },
+        {
+          "generation": 251,
+          "best_score": 4.246205435554784,
+          "median_score": 4.630394016667907
+        },
+        {
+          "generation": 261,
+          "best_score": 4.230417029998468,
+          "median_score": 4.520050351855243
+        },
+        {
+          "generation": 271,
+          "best_score": 4.230417029998468,
+          "median_score": 4.564449060570163
+        },
+        {
+          "generation": 281,
+          "best_score": 4.230417029998468,
+          "median_score": 4.563328793790318
+        },
+        {
+          "generation": 291,
+          "best_score": 4.230417029998468,
+          "median_score": 4.539670536522097
+        },
+        {
+          "generation": 301,
+          "best_score": 4.230417029998468,
+          "median_score": 4.559844716737187
+        },
+        {
+          "generation": 311,
+          "best_score": 4.230417029998468,
+          "median_score": 4.586833126959519
+        },
+        {
+          "generation": 321,
+          "best_score": 4.230417029998468,
+          "median_score": 4.550978417548134
+        },
+        {
+          "generation": 331,
+          "best_score": 4.230417029998468,
+          "median_score": 4.571043909530818
+        },
+        {
+          "generation": 340,
+          "best_score": 4.230417029998468,
+          "median_score": 4.53136069477593
+        }
+      ]
+    }
+  ],
+  "ga_run_overlap": 8,
+  "logs": {
+    "swap_search_trace": [
+      {
+        "step": 1,
+        "removed": 89,
+        "added": 323,
+        "score": 4.48900957302801
+      },
+      {
+        "step": 2,
+        "removed": 100,
+        "added": 322,
+        "score": 4.420368745729166
+      },
+      {
+        "step": 3,
+        "removed": 114,
+        "added": 375,
+        "score": 4.335687024459022
+      },
+      {
+        "step": 4,
+        "removed": 121,
+        "added": 391,
+        "score": 4.301067310980356
+      },
+      {
+        "step": 5,
+        "removed": 218,
+        "added": 52,
+        "score": 4.293538148151271
+      },
+      {
+        "step": 6,
+        "removed": 375,
+        "added": 373,
+        "score": 4.28445025161317
+      },
+      {
+        "step": 7,
+        "removed": 227,
+        "added": 92,
+        "score": 4.283522272546314
+      },
+      {
+        "step": 8,
+        "removed": 373,
+        "added": 47,
+        "score": 4.230038919931
+      },
+      {
+        "step": 9,
+        "removed": 52,
+        "added": 44,
+        "score": 4.224101859287092
+      }
+    ],
+    "gradient_design_history": [
+      {
+        "iteration": 0,
+        "objective_variance": 4.604416827530225
+      },
+      {
+        "iteration": 100,
+        "objective_variance": 0.19170305081166505
+      },
+      {
+        "iteration": 200,
+        "objective_variance": 0.18872159524758764
+      },
+      {
+        "iteration": 300,
+        "objective_variance": 0.18800649661574836
+      },
+      {
+        "iteration": 400,
+        "objective_variance": 0.18781705196483767
+      },
+      {
+        "iteration": 500,
+        "objective_variance": 0.18763859529370377
+      },
+      {
+        "iteration": 600,
+        "objective_variance": 0.18749797492198403
+      },
+      {
+        "iteration": 700,
+        "objective_variance": 0.18744402914309083
+      },
+      {
+        "iteration": 800,
+        "objective_variance": 0.18741332861468923
+      },
+      {
+        "iteration": 900,
+        "objective_variance": 0.18738366142604154
+      },
+      {
+        "iteration": 1000,
+        "objective_variance": 0.18736626511956428
+      },
+      {
+        "iteration": 1100,
+        "objective_variance": 0.1873546897563308
+      },
+      {
+        "iteration": 1200,
+        "objective_variance": 0.1873439694906863
+      },
+      {
+        "iteration": 1300,
+        "objective_variance": 0.18733410939826575
+      },
+      {
+        "iteration": 1400,
+        "objective_variance": 0.18732514671701672
+      },
+      {
+        "iteration": 1500,
+        "objective_variance": 0.18731710780758196
+      },
+      {
+        "iteration": 1600,
+        "objective_variance": 0.18730999754053643
+      },
+      {
+        "iteration": 1700,
+        "objective_variance": 0.1873037918532907
+      },
+      {
+        "iteration": 1800,
+        "objective_variance": 0.18729843427524312
+      },
+      {
+        "iteration": 1900,
+        "objective_variance": 0.18729383847446415
+      },
+      {
+        "iteration": 2000,
+        "objective_variance": 0.18728989716737837
+      },
+      {
+        "iteration": 2100,
+        "objective_variance": 0.18728649517096818
+      },
+      {
+        "iteration": 2200,
+        "objective_variance": 0.18728352262341189
+      },
+      {
+        "iteration": 2300,
+        "objective_variance": 0.18728145618691522
+      },
+      {
+        "iteration": 2400,
+        "objective_variance": 0.18727960979934255
+      },
+      {
+        "iteration": 2500,
+        "objective_variance": 0.18727788309008508
+      },
+      {
+        "iteration": 2600,
+        "objective_variance": 0.1872762652964564
+      },
+      {
+        "iteration": 2700,
+        "objective_variance": 0.1872747500136182
+      },
+      {
+        "iteration": 2800,
+        "objective_variance": 0.1872733314917825
+      },
+      {
+        "iteration": 2900,
+        "objective_variance": 0.1872720042694325
+      },
+      {
+        "iteration": 2999,
+        "objective_variance": 0.18727077513273888
+      }
+    ],
+    "ga_polish_trace": [
+      {
+        "step": 1,
+        "removed": 366,
+        "added": 183,
+        "score": 4.213980943872678
+      }
+    ]
+  },
+  "noise_sweep": [
+    {
+      "design": "week2_d_optimal",
+      "relative_noise": 0.01,
+      "overall_mae_pp": 3.523107160711799,
+      "ethane_mae_pp": 6.768353275667341,
+      "ethene_mae_pp": 9.91085479286104,
+      "ratio_err_pct": 86.86512865000711,
+      "ratio_median_pct": 100.0,
+      "ratio_within_10pct_frac": 0.03571428571428571,
+      "ethene_zeroed_frac": 0.40934065934065933,
+      "ethane_zeroed_frac": 0.15384615384615385,
+      "ratio_cases": 364
+    },
+    {
+      "design": "week2_d_optimal",
+      "relative_noise": 0.005,
+      "overall_mae_pp": 2.4520939326903357,
+      "ethane_mae_pp": 4.575365748477117,
+      "ethene_mae_pp": 7.717062817943894,
+      "ratio_err_pct": 78.9016243288487,
+      "ratio_median_pct": 100.0,
+      "ratio_within_10pct_frac": 0.03021978021978022,
+      "ethene_zeroed_frac": 0.2692307692307692,
+      "ethane_zeroed_frac": 0.07692307692307693,
+      "ratio_cases": 364
+    },
+    {
+      "design": "week2_d_optimal",
+      "relative_noise": 0.002,
+      "overall_mae_pp": 1.3428244177183168,
+      "ethane_mae_pp": 2.429211240905791,
+      "ethene_mae_pp": 4.542789541677366,
+      "ratio_err_pct": 58.09168185939622,
+      "ratio_median_pct": 56.32091063534473,
+      "ratio_within_10pct_frac": 0.07692307692307693,
+      "ethene_zeroed_frac": 0.11538461538461539,
+      "ethane_zeroed_frac": 0.01098901098901099,
+      "ratio_cases": 364
+    },
+    {
+      "design": "week2_d_optimal",
+      "relative_noise": 0.001,
+      "overall_mae_pp": 0.7760718926054538,
+      "ethane_mae_pp": 1.3912323557666688,
+      "ethene_mae_pp": 2.6910120827153325,
+      "ratio_err_pct": 38.14471089140601,
+      "ratio_median_pct": 29.877516883465784,
+      "ratio_within_10pct_frac": 0.15384615384615385,
+      "ethene_zeroed_frac": 0.03296703296703297,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    },
+    {
+      "design": "week2_d_optimal",
+      "relative_noise": 0.0005,
+      "overall_mae_pp": 0.4203828806434134,
+      "ethane_mae_pp": 0.7503336046694927,
+      "ethene_mae_pp": 1.4739303669754806,
+      "ratio_err_pct": 21.466610176695085,
+      "ratio_median_pct": 15.45850175852161,
+      "ratio_within_10pct_frac": 0.3626373626373626,
+      "ethene_zeroed_frac": 0.0027472527472527475,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    },
+    {
+      "design": "genetic_algorithm",
+      "relative_noise": 0.01,
+      "overall_mae_pp": 3.5066499340233506,
+      "ethane_mae_pp": 6.526632068682956,
+      "ethene_mae_pp": 9.534176874123784,
+      "ratio_err_pct": 83.73527843505373,
+      "ratio_median_pct": 100.0,
+      "ratio_within_10pct_frac": 0.019230769230769232,
+      "ethene_zeroed_frac": 0.38461538461538464,
+      "ethane_zeroed_frac": 0.15384615384615385,
+      "ratio_cases": 364
+    },
+    {
+      "design": "genetic_algorithm",
+      "relative_noise": 0.005,
+      "overall_mae_pp": 2.397582217055425,
+      "ethane_mae_pp": 4.411934129329107,
+      "ethene_mae_pp": 7.285797258776691,
+      "ratio_err_pct": 74.53093238935642,
+      "ratio_median_pct": 100.0,
+      "ratio_within_10pct_frac": 0.04945054945054945,
+      "ethene_zeroed_frac": 0.25,
+      "ethane_zeroed_frac": 0.07967032967032966,
+      "ratio_cases": 364
+    },
+    {
+      "design": "genetic_algorithm",
+      "relative_noise": 0.002,
+      "overall_mae_pp": 1.2955076139812447,
+      "ethane_mae_pp": 2.3608774024879655,
+      "ethene_mae_pp": 4.252107112431037,
+      "ratio_err_pct": 54.58847053332961,
+      "ratio_median_pct": 48.46297554391621,
+      "ratio_within_10pct_frac": 0.12912087912087913,
+      "ethene_zeroed_frac": 0.09065934065934066,
+      "ethane_zeroed_frac": 0.01098901098901099,
+      "ratio_cases": 364
+    },
+    {
+      "design": "genetic_algorithm",
+      "relative_noise": 0.001,
+      "overall_mae_pp": 0.7403488572588333,
+      "ethane_mae_pp": 1.3404938931433217,
+      "ethene_mae_pp": 2.4961008046911997,
+      "ratio_err_pct": 36.41765691014442,
+      "ratio_median_pct": 25.927931796392063,
+      "ratio_within_10pct_frac": 0.20054945054945056,
+      "ethene_zeroed_frac": 0.008241758241758242,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    },
+    {
+      "design": "genetic_algorithm",
+      "relative_noise": 0.0005,
+      "overall_mae_pp": 0.39146751714521805,
+      "ethane_mae_pp": 0.7054959010055856,
+      "ethene_mae_pp": 1.3338039753748554,
+      "ratio_err_pct": 20.361672756534617,
+      "ratio_median_pct": 13.456801780828322,
+      "ratio_within_10pct_frac": 0.4010989010989011,
+      "ethene_zeroed_frac": 0.0,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    },
+    {
+      "design": "all_464",
+      "relative_noise": 0.01,
+      "overall_mae_pp": 2.83000750722045,
+      "ethane_mae_pp": 5.6244337695677915,
+      "ethene_mae_pp": 8.54608499794431,
+      "ratio_err_pct": 81.04081826563812,
+      "ratio_median_pct": 100.0,
+      "ratio_within_10pct_frac": 0.04120879120879121,
+      "ethene_zeroed_frac": 0.3598901098901099,
+      "ethane_zeroed_frac": 0.12637362637362637,
+      "ratio_cases": 364
+    },
+    {
+      "design": "all_464",
+      "relative_noise": 0.005,
+      "overall_mae_pp": 1.8896565599346895,
+      "ethane_mae_pp": 3.6907911646257445,
+      "ethene_mae_pp": 6.183893618377213,
+      "ratio_err_pct": 69.99499593840002,
+      "ratio_median_pct": 88.33251716999851,
+      "ratio_within_10pct_frac": 0.08516483516483517,
+      "ethene_zeroed_frac": 0.21703296703296704,
+      "ethane_zeroed_frac": 0.06318681318681318,
+      "ratio_cases": 364
+    },
+    {
+      "design": "all_464",
+      "relative_noise": 0.002,
+      "overall_mae_pp": 0.9647411004282792,
+      "ethane_mae_pp": 1.8524120456301494,
+      "ethene_mae_pp": 3.3236528353794257,
+      "ratio_err_pct": 47.42398753365631,
+      "ratio_median_pct": 39.10521367043453,
+      "ratio_within_10pct_frac": 0.14285714285714285,
+      "ethene_zeroed_frac": 0.054945054945054944,
+      "ethane_zeroed_frac": 0.005494505494505495,
+      "ratio_cases": 364
+    },
+    {
+      "design": "all_464",
+      "relative_noise": 0.001,
+      "overall_mae_pp": 0.5258636243165618,
+      "ethane_mae_pp": 1.0081792149454327,
+      "ethene_mae_pp": 1.8397057283078093,
+      "ratio_err_pct": 28.78756176832535,
+      "ratio_median_pct": 19.986545310862013,
+      "ratio_within_10pct_frac": 0.2664835164835165,
+      "ethene_zeroed_frac": 0.005494505494505495,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    },
+    {
+      "design": "all_464",
+      "relative_noise": 0.0005,
+      "overall_mae_pp": 0.27411207791603676,
+      "ethane_mae_pp": 0.5266363387502624,
+      "ethene_mae_pp": 0.9647947422685746,
+      "ratio_err_pct": 14.894849546457268,
+      "ratio_median_pct": 10.422734809985128,
+      "ratio_within_10pct_frac": 0.47802197802197804,
+      "ethene_zeroed_frac": 0.0,
+      "ethane_zeroed_frac": 0.0,
+      "ratio_cases": 364
+    }
+  ],
+  "max_noise_meeting_all_targets": {
+    "week2_d_optimal": null,
+    "genetic_algorithm": null,
+    "all_464": null
+  },
+  "linear_sd_pp": {
+    "week2_d_optimal": [
+      27.913209162526798,
+      23.791587030689097,
+      49.17875510282181,
+      3.0104210976413803,
+      3.799307479169188,
+      0.7734634426762413,
+      0.7186320632381895,
+      0.6103122121889561
+    ],
+    "swap_search": [
+      24.481182193413005,
+      21.6341171675594,
+      43.26251169837027,
+      3.542193298268089,
+      4.042088156215547,
+      0.9827837372984951,
+      1.082177067857531,
+      0.6218294173626195
+    ],
+    "gradient_design": [
+      30.365749558165728,
+      23.205558890291403,
+      39.00227955262407,
+      3.2078748127997914,
+      4.1100192679334135,
+      3.284606760051729,
+      20.309595088464363,
+      0.7664403468704687
+    ],
+    "genetic_algorithm": [
+      24.234333007030287,
+      21.73871085263437,
+      43.19614314835392,
+      3.5044855869364193,
+      3.993260588213135,
+      1.4769963928537047,
+      1.0969423246722998,
+      0.5782143893403274
+    ],
+    "all_464": [
+      16.57256946460498,
+      16.060072206356427,
+      30.542945870028344,
+      2.0441228293218834,
+      2.711664637595624,
+      0.35516770145616994,
+      0.11314510507115852,
+      0.09812727035380826
+    ]
+  },
+  "sensitivity": {
+    "week2_d_optimal": {
+      "mofs": [
+        "CISMAT01",
+        "FERHAN",
+        "FUDQIF",
+        "GEDLIM",
+        "GEHSAN",
+        "GIZJOP",
+        "LOFZUB",
+        "MEJQEZ",
+        "MOGVAG",
+        "PUQXUV",
+        "RURPEA",
+        "XUWVEQ"
+      ],
+      "gases": [
+        "methane",
+        "ethane",
+        "ethene",
+        "propane",
+        "propene",
+        "isobutane",
+        "isopentane",
+        "2-pentene"
+      ],
+      "mc_score_elasticity": [
+        [
+          -0.0006704199487880776,
+          0.053088211213485635,
+          0.0047947475274011855,
+          0.049524206084180525,
+          -0.177515867497634,
+          -0.0006180806299235434,
+          0.0004428291272786726,
+          -0.002710037023724492
+        ],
+        [
+          7.551100209574552e-05,
+          0.005731565898919841,
+          -0.003153444607990191,
+          -0.003201893442978301,
+          -0.001142705271156158,
+          -0.02321925034197801,
+          0.002255403691849517,
+          0.00012116844225410397
+        ],
+        [
+          -0.00032455867605203984,
+          -0.016160791362037755,
+          0.012762863779396874,
+          -0.00037541080536301034,
+          0.005548574556392121,
+          0.0,
+          0.0,
+          -0.0032051736856801914
+        ],
+        [
+          -4.079041075945315e-06,
+          -0.00011491107017797222,
+          0.00011564227841243613,
+          0.00014348132708544195,
+          -7.752908723377154e-05,
+          0.0003507653594084699,
+          0.0007101105900205315,
+          -0.0043694774852119315
+        ],
+        [
+          -0.004955320854109043,
+          -0.5370646547062676,
+          0.29726198669717957,
+          0.020668254060887677,
+          0.16172861711872308,
+          0.019024719961945973,
+          -0.0010314249042182404,
+          0.000943262769566238
+        ],
+        [
+          -0.000642319581839219,
+          -0.01798298320629743,
+          0.016465628004621553,
+          0.004260079785244195,
+          -0.0018935469753323026,
+          -0.0014927726574345574,
+          -0.00010083395642100339,
+          -6.785505381469132e-05
+        ],
+        [
+          -5.642049468495509e-09,
+          -9.354189235945632e-07,
+          4.3633594755496303e-07,
+          3.9323899136549e-06,
+          -3.8000207724571484e-08,
+          0.00015141207621085698,
+          -0.005654211563369824,
+          2.4250931089620118e-05
+        ],
+        [
+          0.003722397690470691,
+          0.10571913548399936,
+          -0.11096658439248401,
+          -0.08825107488389809,
+          0.05200198553259379,
+          -0.0062179828186129105,
+          8.579817624283217e-05,
+          0.0024567404311000773
+        ],
+        [
+          -0.0034687332919853963,
+          -0.0858396094140456,
+          0.09952927723474639,
+          0.02328116151459358,
+          -0.054329378955176796,
+          1.0687319812131805e-07,
+          3.877177480225551e-09,
+          -1.2245495886474322e-06
+        ],
+        [
+          -0.00011365544584809711,
+          -0.016459794011411913,
+          0.003344800284476358,
+          0.014256920740518413,
+          -0.007141639416019044,
+          0.010159982352692434,
+          0.0008630615384069975,
+          -0.0027573806619271466
+        ],
+        [
+          0.010150033482760813,
+          0.1007333322646276,
+          -0.17982260099734335,
+          -0.005016741238050847,
+          0.01779016699590006,
+          -7.002287900643201e-11,
+          -5.585190305260268e-14,
+          0.00031328190112339254
+        ],
+        [
+          0.007836727847056262,
+          0.049404525096275784,
+          -0.11904380574008869,
+          -0.005342593407671626,
+          0.014450473444315683,
+          -5.358907283006494e-09,
+          -2.2295694513060697e-10,
+          0.011402875167467089
+        ]
+      ],
+      "base_score": 4.611691413100982,
+      "mc_ethane_ethene_elasticity": [
+        [
+          -0.0013659673352695674,
+          0.11538622019289085,
+          -0.019415622090527294,
+          0.06058338519201966,
+          -0.2503756701494566,
+          -0.0007513041024668922,
+          0.000797202624451176,
+          -0.003521572712789391
+        ],
+        [
+          7.78322196860066e-05,
+          0.005249145233629677,
+          -0.0030648376299057286,
+          -0.004523241643368487,
+          6.910070496888527e-05,
+          -0.019294006856211084,
+          0.0023223985745278735,
+          0.00024863306510907466
+        ],
+        [
+          0.0009222793584510374,
+          0.015460400952014806,
+          -0.013400410258126567,
+          -0.0008396711235752042,
+          0.004189658809330501,
+          0.0,
+          0.0,
+          -0.006658686055408699
+        ],
+        [
+          -8.011478025218293e-06,
+          -0.0002443090286373028,
+          0.00023554794438522398,
+          0.00024185259011819043,
+          -0.00012080869083458715,
+          0.00043088650898823986,
+          0.0008087286811244413,
+          -0.008772154951652816
+        ],
+        [
+          -0.007000000522983281,
+          -0.7903739943833927,
+          0.410742759305229,
+          0.03875732919896975,
+          0.19408842588475544,
+          0.023392096749810697,
+          -0.0016596890456432511,
+          0.0009454961498922312
+        ],
+        [
+          -0.0004009806125759414,
+          0.0014562355456161843,
+          0.004262098649215305,
+          0.0005550956744927253,
+          -0.005811515596311401,
+          -0.00854583955328535,
+          0.0007731085738329601,
+          -8.7986377826575e-05
+        ],
+        [
+          -4.664176513609402e-09,
+          -6.439219851693575e-07,
+          3.314866327875452e-07,
+          3.4589247302806196e-06,
+          -6.167312485783954e-07,
+          8.934186148131928e-05,
+          -0.003943288570493069,
+          -0.0001355192813863737
+        ],
+        [
+          0.006245028036857689,
+          0.18159970180886778,
+          -0.16346927904114975,
+          -0.14671764596337128,
+          0.09450912908782533,
+          -0.005708580533532378,
+          -0.00014713117898457689,
+          0.007404518415725943
+        ],
+        [
+          -0.003529058523918235,
+          -0.09091662596487962,
+          0.10337896723349436,
+          0.040720396418218195,
+          -0.058324374217333774,
+          1.260556357071768e-07,
+          7.672679812081473e-09,
+          -1.660610471335341e-06
+        ],
+        [
+          -0.0005718575583982795,
+          -0.060341215613419416,
+          0.03786889435497615,
+          0.046090838630086506,
+          -0.030162774234930537,
+          0.011772590230365093,
+          -8.605916758545487e-05,
+          -0.005627051812708819
+        ],
+        [
+          0.013852844655953786,
+          0.12235642848900523,
+          -0.22676950627321374,
+          -0.006425465192125638,
+          0.02473139628266882,
+          -7.242649538856893e-11,
+          -1.3076128316174093e-14,
+          0.00040581716393064016
+        ],
+        [
+          0.008636952579788295,
+          0.027745832473842547,
+          -0.13316366777038252,
+          -0.008157999476208252,
+          0.041532199533129525,
+          -4.012699827995696e-09,
+          -1.9214498818730086e-10,
+          0.019627632361504506
+        ]
+      ],
+      "base_ethane_ethene_mae_pp": 8.150838519394354,
+      "linear_elasticity": [
+        [
+          0.008814564724257618,
+          0.3045759826822899,
+          -0.27249898612832013,
+          -0.25099326340281863,
+          0.16999266802824997,
+          -0.00038530624501030276,
+          0.0001101670250375852,
+          0.0031386138563563567
+        ],
+        [
+          0.0001898841414374723,
+          0.009755889241587727,
+          -0.00660316028145601,
+          -0.016589678694226253,
+          0.006186649142852364,
+          -0.008367439787953164,
+          -0.00027678332079349583,
+          0.0009278395012523049
+        ],
+        [
+          -0.010382016465045633,
+          -0.14320777300709372,
+          0.1559356005377111,
+          0.004871808747495333,
+          -0.029376397313464586,
+          3.124221649087647e-22,
+          1.92997547168435e-22,
+          -0.02548607630305776
+        ],
+        [
+          -1.603858279199772e-05,
+          -0.0005272039711246399,
+          0.0004884739954369963,
+          0.0005779083975477053,
+          -0.00028283200158423215,
+          0.00026313778634620325,
+          0.0005927475231603515,
+          -0.011145982386198655
+        ],
+        [
+          -0.041599017457422366,
+          -1.8706309542452322,
+          1.561320822737402,
+          0.5762106018784245,
+          -0.38900483035971306,
+          0.011340222658703353,
+          -7.228485467126338e-05,
+          -0.0022164146064998775
+        ],
+        [
+          0.0022999219787481822,
+          0.060757946024893275,
+          -0.052981435808647975,
+          -0.03572015684146459,
+          0.01844310632841472,
+          -0.008805093518291581,
+          -3.349303116033774e-05,
+          0.00015780517229351077
+        ],
+        [
+          -1.2792961364866522e-09,
+          -1.954523522461703e-07,
+          9.528343392129066e-08,
+          1.2070349419009202e-06,
+          -1.6896567569232766e-07,
+          1.849162630924577e-05,
+          -0.00040989722252089634,
+          -0.00011524246229349953
+        ],
+        [
+          0.02877886319958637,
+          0.8098672999261213,
+          -0.7703647695660276,
+          -0.569862467075076,
+          0.3597828176807246,
+          -0.007262185424603303,
+          -0.00024190248867871685,
+          0.02201420880461334
+        ],
+        [
+          -0.023375926867609316,
+          -0.7613833136828618,
+          0.807290775438223,
+          0.1660710812032255,
+          -0.23990472817722494,
+          4.3635428848264875e-07,
+          2.3179997108291334e-09,
+          -2.79105421276158e-06
+        ],
+        [
+          -0.0029838176462691993,
+          -0.3230634457506803,
+          0.2067205292250155,
+          0.19386794548944947,
+          -0.10688800810290518,
+          0.013020707253099478,
+          0.0003014677269286475,
+          -0.023972204016565368
+        ],
+        [
+          0.08175382813483989,
+          0.8547534099027356,
+          -1.4127750328263922,
+          -0.031512684407063285,
+          0.10281213315914291,
+          -8.293538442471857e-11,
+          -2.2792022708626448e-14,
+          0.0011398237653990203
+        ],
+        [
+          0.035874786056043224,
+          0.8017699489023397,
+          -1.0380983616288508,
+          -0.04194957806935889,
+          0.11265065917546584,
+          -3.9600311475901635e-09,
+          -1.5882510942393999e-10,
+          0.03592646521255094
+        ]
+      ],
+      "gradient_fd_max_rel_diff": 3.360967483675982e-07,
+      "spearman_linear_vs_mc": 0.6248732531006261,
+      "top_entries": [
+        {
+          "mof": "GEHSAN",
+          "gas": "ethane",
+          "elasticity": -0.5370646547062676
+        },
+        {
+          "mof": "GEHSAN",
+          "gas": "ethene",
+          "elasticity": 0.29726198669717957
+        },
+        {
+          "mof": "RURPEA",
+          "gas": "ethene",
+          "elasticity": -0.17982260099734335
+        },
+        {
+          "mof": "CISMAT01",
+          "gas": "propene",
+          "elasticity": -0.177515867497634
+        },
+        {
+          "mof": "GEHSAN",
+          "gas": "propene",
+          "elasticity": 0.16172861711872308
+        }
+      ]
+    },
+    "genetic_algorithm": {
+      "mofs": [
+        "CISMAT01",
+        "CUMDIY",
+        "DAGDIZ",
+        "FERHAN",
+        "FIGXAW",
+        "GEHSAN",
+        "KAXQOR",
+        "MOGVAG",
+        "RUFMUA",
+        "RUFMUA01",
+        "RURPEA",
+        "XUWVEQ"
+      ],
+      "gases": [
+        "methane",
+        "ethane",
+        "ethene",
+        "propane",
+        "propene",
+        "isobutane",
+        "isopentane",
+        "2-pentene"
+      ],
+      "mc_score_elasticity": [
+        [
+          -0.0008307836061102194,
+          0.0832868248843552,
+          -0.023394832396784984,
+          -0.02953326357352635,
+          -0.13103255022732446,
+          0.0031137497764695686,
+          -0.0025879333047546414,
+          -0.002767813860345961
+        ],
+        [
+          -1.61786895473756e-06,
+          -4.6105457656856775e-05,
+          4.925749398070375e-05,
+          0.00019272947035314607,
+          -0.00012363455297251483,
+          -1.3175976950204291e-05,
+          0.00014171666475403733,
+          -0.0142534087211458
+        ],
+        [
+          -1.0091110082799481e-06,
+          -7.211373927186887e-05,
+          3.7119894518420634e-05,
+          6.077137369876117e-05,
+          2.9735488159954106e-05,
+          -0.0018734257410984126,
+          0.009268660277778052,
+          0.0009567975280284599
+        ],
+        [
+          5.6330911458083895e-06,
+          0.0013390359475107488,
+          -0.000516310190565323,
+          -0.0012749656151989537,
+          -0.000941558804777572,
+          0.0382126578338932,
+          -0.010958590463542073,
+          -0.0002805706096719636
+        ],
+        [
+          -0.00333725374042864,
+          -0.18377644233468812,
+          0.11158025997592512,
+          0.0022358024622337316,
+          0.02993426806076791,
+          -0.0004623441994830078,
+          -5.824667449819598e-06,
+          0.013359561678237488
+        ],
+        [
+          0.00015053249329079926,
+          -0.34759570628669456,
+          0.1276289509562207,
+          0.010730233088614233,
+          0.10946884811887178,
+          -0.04340404363778408,
+          0.0019002658324421982,
+          0.0009275888115574844
+        ],
+        [
+          2.544838083919607e-07,
+          2.3613324673393072e-05,
+          -1.4633415629733081e-05,
+          -7.708725821776926e-05,
+          2.851628170008407e-05,
+          -1.7386134302973441e-06,
+          2.3094255233368446e-05,
+          -0.0008253008802525548
+        ],
+        [
+          -0.0009697153120306312,
+          -0.028252178486819785,
+          0.03371654734344892,
+          0.024942354583185774,
+          -0.041026594688132946,
+          -1.9102418460087155e-06,
+          3.0412557461115694e-08,
+          -8.367132630217828e-07
+        ],
+        [
+          0.010376898153233697,
+          0.041421364267834763,
+          -0.07104186646574126,
+          -0.00026983472511144294,
+          -0.0008121484243608156,
+          3.629641622332931e-09,
+          -6.255700322650086e-10,
+          0.0005528912185314485
+        ],
+        [
+          0.006692974913153877,
+          0.0356057223874029,
+          -0.096212534418013,
+          -0.00028026382442514116,
+          -0.0007150569888471341,
+          3.488953018600188e-09,
+          -2.5145216183556114e-10,
+          0.00024392195701479735
+        ],
+        [
+          0.006279870595765281,
+          0.06399510033326943,
+          -0.1410055289016952,
+          -0.003298532914573462,
+          0.018698304781302202,
+          3.732558234043285e-10,
+          -2.8032336024651417e-13,
+          0.0002686811046561993
+        ],
+        [
+          0.0016935754215493602,
+          0.07177595410234544,
+          -0.08970872159523562,
+          0.006646088545699477,
+          -0.024246166821781594,
+          9.002224298567914e-09,
+          -5.60733135964984e-10,
+          0.0010811290254728705
+        ]
+      ],
+      "base_score": 4.213980943872678,
+      "mc_ethane_ethene_elasticity": [
+        [
+          0.00025750429520130983,
+          0.1597748403862143,
+          -0.06469410380969054,
+          -0.02517590563886102,
+          -0.16672751117560822,
+          0.00019070796757875443,
+          4.292425142078129e-05,
+          -0.005467969157858377
+        ],
+        [
+          -1.4261684695189736e-06,
+          -3.2586456592699985e-05,
+          4.084287905774054e-05,
+          0.00015152469668961325,
+          -0.00010827512138448103,
+          -1.2877219231978458e-05,
+          0.0001958373438957477,
+          -0.015901426225586025
+        ],
+        [
+          -5.7737429467167635e-06,
+          -0.000216083273662052,
+          0.00013481211241933786,
+          0.00022144249704472805,
+          1.446165438086079e-05,
+          0.0003041267811104553,
+          -0.004874333969369843,
+          0.002107506276018855
+        ],
+        [
+          2.8939770385840318e-05,
+          0.0037247693741399375,
+          -0.0016408210392248998,
+          -0.004082624424318604,
+          -0.0009668144364990906,
+          -0.0045574804049790495,
+          0.00578877622428508,
+          -0.0005797709875905288
+        ],
+        [
+          -0.0003146747891207273,
+          -0.16750212343958967,
+          0.09488491329059677,
+          -0.0031680197750259998,
+          0.03156751154064835,
+          0.0006703064296780352,
+          -1.786226517485748e-05,
+          0.02191832137755633
+        ],
+        [
+          -0.004351737841786577,
+          -0.608863081474473,
+          0.30112435067557564,
+          0.023024535862140448,
+          0.16307250855548122,
+          0.005676485812753701,
+          -0.0015422014716058002,
+          0.0013647399599445486
+        ],
+        [
+          -9.14187245217142e-09,
+          1.0478301292717509e-05,
+          -2.6598125161405876e-06,
+          1.4540767238232544e-05,
+          -3.349414342439517e-05,
+          -2.1975068472208245e-06,
+          3.129472207380922e-05,
+          -0.011988474343053463
+        ],
+        [
+          -0.002390317344946343,
+          -0.05281709896922985,
+          0.0633108626207687,
+          0.04263304238484115,
+          -0.08065711931997314,
+          -1.4668111570787084e-06,
+          4.19595567652375e-08,
+          -1.0590966113204337e-07
+        ],
+        [
+          -0.00014898188543491467,
+          -0.002239998849915867,
+          -0.0016851401254198983,
+          0.00029832217601964353,
+          -0.0004641293718483858,
+          2.004637086089206e-09,
+          -7.109234187811001e-10,
+          -0.00011049465696776276
+        ],
+        [
+          0.012283679889666756,
+          0.045240003134599006,
+          -0.10608848560684164,
+          -0.0010667771701597275,
+          0.0011059299485169562,
+          1.3409023763969198e-09,
+          -1.5914045120139885e-10,
+          -0.0001527233140443975
+        ],
+        [
+          0.015635812834067127,
+          0.11271576759352986,
+          -0.22369858646020074,
+          -0.006507378269965027,
+          0.030279835112110586,
+          1.7750091252021155e-10,
+          -2.1910720346363606e-13,
+          0.0003288940977508046
+        ],
+        [
+          0.003972332459331553,
+          0.03627526011655722,
+          -0.09036075641320988,
+          -0.002995311127919546,
+          0.02139070560620699,
+          7.498298755789886e-09,
+          -8.819570571419345e-10,
+          0.01159924613874461
+        ]
+      ],
+      "base_ethane_ethene_mae_pp": 7.377597350981235,
+      "linear_elasticity": [
+        [
+          0.014761696219650084,
+          0.5301083905107729,
+          -0.4632613915219672,
+          -0.5675906844756446,
+          0.3638182593899906,
+          -0.0010576909273873703,
+          0.002409726019053314,
+          0.004014329297687964
+        ],
+        [
+          -1.9402166581450046e-06,
+          -9.80755780808983e-05,
+          7.159122252544422e-05,
+          0.0002625765188678175,
+          -0.00010491174120704256,
+          1.5707757977409794e-06,
+          -3.976488544693194e-05,
+          -0.00785297605162599
+        ],
+        [
+          -1.4814314688928205e-05,
+          -0.00032094478601686963,
+          0.0002614043777622486,
+          0.0005064490385176846,
+          -0.00015395021047754745,
+          0.0008703377078281972,
+          -0.008695851345107931,
+          -0.0015825300002564229
+        ],
+        [
+          0.00012919743679874732,
+          0.007375020318487691,
+          -0.00469339107733011,
+          -0.014619557452967167,
+          0.004491171853064294,
+          -0.01319598977316453,
+          0.008635125728631092,
+          0.0004107449605948919
+        ],
+        [
+          -0.007961651902904146,
+          -0.25700660406100734,
+          0.2521995673806771,
+          0.029638525748709822,
+          -0.027215341314604746,
+          0.0005165871406320068,
+          -1.5270646388967526e-05,
+          -0.007690368238072897
+        ],
+        [
+          -0.021541521178487084,
+          -1.0554044295924663,
+          0.8376939047709097,
+          0.39182994898749485,
+          -0.22635418130681953,
+          0.012351931026631256,
+          -0.0018626833750280578,
+          -0.0007619552254827469
+        ],
+        [
+          -3.030388929953483e-07,
+          -2.308209289280717e-05,
+          1.6085289935514822e-05,
+          7.963631787761148e-05,
+          -3.982079865733632e-05,
+          2.403186197587727e-07,
+          -6.476126264559723e-06,
+          -0.007918789059925612
+        ],
+        [
+          -0.023120186331235033,
+          -0.7992971950293466,
+          0.8176196677250293,
+          0.2159069069743398,
+          -0.279758082621854,
+          6.853688597598689e-07,
+          -2.2984717842513037e-08,
+          -2.286564928854511e-06
+        ],
+        [
+          0.051981099900096854,
+          0.15294147427568364,
+          -0.4135914315280029,
+          -0.0051897029193036315,
+          0.010329235770945244,
+          -1.2228868257461774e-09,
+          6.197616444564947e-10,
+          0.002625045664136028
+        ],
+        [
+          0.051731630714553056,
+          0.149286849758041,
+          -0.41025613812023326,
+          -0.004789149375569596,
+          0.009488051082569629,
+          -1.0880462849127544e-09,
+          2.690545119534676e-10,
+          0.002303432706466395
+        ],
+        [
+          0.055700745209154245,
+          0.6167194199814442,
+          -0.9847418951644308,
+          -0.028279145528896394,
+          0.08309938685115822,
+          -8.932060491191518e-11,
+          1.8300773172532555e-13,
+          0.0006421891298592874
+        ],
+        [
+          0.01912730846728389,
+          0.45109801992067816,
+          -0.5653592850789001,
+          -0.029430292921914666,
+          0.07149730842318457,
+          -3.0937500728408936e-09,
+          6.672936769197045e-10,
+          0.01634928414196729
+        ]
+      ],
+      "gradient_fd_max_rel_diff": 3.526173542689776e-06,
+      "spearman_linear_vs_mc": 0.6150434074877916,
+      "top_entries": [
+        {
+          "mof": "GEHSAN",
+          "gas": "ethane",
+          "elasticity": -0.34759570628669456
+        },
+        {
+          "mof": "FIGXAW",
+          "gas": "ethane",
+          "elasticity": -0.18377644233468812
+        },
+        {
+          "mof": "RURPEA",
+          "gas": "ethene",
+          "elasticity": -0.1410055289016952
+        },
+        {
+          "mof": "CISMAT01",
+          "gas": "propene",
+          "elasticity": -0.13103255022732446
+        },
+        {
+          "mof": "GEHSAN",
+          "gas": "ethene",
+          "elasticity": 0.1276289509562207
+        }
+      ]
+    }
+  },
+  "ethene_ethane_selectivity": {
+    "median": 0.49552464018004255,
+    "p95": 6.74841972187096,
+    "frac_ethane_stronger": 0.8706896551724138,
+    "n_above_2": 43,
+    "n_above_5": 24,
+    "selective_full_scale_vs_median": {
+      "median": 1.4731860861000181e-06,
+      "p05": 7.933364024710129e-11,
+      "p95": 9.412973887348367e-05,
+      "min": 5.203258995963727e-13
+    },
+    "selective_in_design": {
+      "week2_d_optimal": 0,
+      "swap_search": 0,
+      "gradient_design": 0,
+      "genetic_algorithm": 0
+    }
+  }
+}
