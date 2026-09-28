@@ -76,3 +76,4 @@
 - Score: the mean over targets of metric divided by target, used by the swap search and the genetic algorithm. Selection only ever sees development seed 20260921. Reported numbers use held-out seed 20260922 and a fresh seed 20260928.
 - Gradients: no autodiff library is installed (jax and torch are absent, and new dependencies need Ken's approval). The week uses the closed-form derivative of the linearized sum-to-one least-squares covariance, checked against finite differences, and central finite differences of the full constrained simulator with the noise draws held fixed.
 - Noise sweep keeps the week-2 floor-to-relative ratio (the floor is 10% of the relative noise level).
+- Ken's decision, recorded word for word: "That's good to go. Just put it to my clipboard and then just open the PDF one-pager. I'll send everything myself." (approved `weeks/03/slack_draft.md` as written, with `weeks/03/week3_onepager.pdf` as the attachment; Ken sends it himself)
