@@ -84,7 +84,12 @@
 
 - Ken's decision, recorded word for word: "dont send it broi, we need to do our weekly research and continue with the agenda and then ill approve"
 - Ken's decision, recorded word for word: "find the repos urself and run the research"
-- Pending Ken's approval: `weeks/04/slack_draft.md` (typed into the Slack DM composer, not sent) with `weeks/04/week4_onepager.png` as the attachment.
+- Ken's decision, recorded word for word: "Ethylene matters more" (his answer to Dr. Medford's question about how critical the ethane/ethylene pair is; ethylene stays a separate target rather than being lumped with ethane)
+- Ken's decision, recorded word for word: "I will write it myself" (Ken writes the Slack message; `weeks/04/slack_draft.md` is reference only)
+- Ken's decision, recorded word for word: "remove the next thing, i can ask myself" (the call question about model architectures was removed from the card; Ken asks Dr. Medford himself)
+- Ken's decision, recorded word for word: "ill send it myself"
+- Ken's decision, recorded word for word: "Make it simpler for the next weeks plan thing" (the card now ends with next week's plan: lock in the 7-sensor array around the ethylene sensor)
+- Ken's decision, recorded word for word: "push it , we are connected to github bro"
 
 ### AI decisions
 

@@ -116,7 +116,7 @@ card = [
                  f"host (median of {num(spread['n_frameworks'])} hosts: {pp(spread['median'])} pp). A sieve that also took up methane "
                  f"at {R.num(100*methane_fraction, '{:.0f}%')} of its ethylene response still gives {pp(methane30)} pp.", body),
     ], .5),
-    ('text', 'Next: a light-gas channel. Could we do a quick call on model architectures for that?',
+    ('text', f"Next week: lock in the {num(pruned['size'])}-sensor array around the ethylene sensor.",
      {'size': 24, 'weight': 'bold', 'after': 16}),
     ('text', "Held-out mixtures; hosts and pruning chosen on development mixtures only. "
              f"Breakdown: error reaches half of always guessing the average composition. Sources: Lin et al., Nat. Mater. (UTSA-280); "
@@ -131,7 +131,6 @@ TL;DR:
 - Adding one of these as a {added_n}th sensor cuts ethylene error from {pp(ga_e)} to {pp(sieve_e)} pp at {one} noise, and {num(pruned['size']-1)} MOFs plus that sensor hold it there.
 - Treating noise as the variable: ethylene now holds up to {noise(breakdown('ga+sieve', 'ethene'), '{:.1f}%')} noise, but methane and ethane break down near {noise(breakdown('ga+sieve', 'methane'), '{:.0f}%')}, so ethane ({pp(sieve_ethane)} pp) and the ratio are still the limit.
 
-Question: would you be open to a quick call this week? I'd love to hear what model architectures you'd propose for the next step, like using ODAC/UMA to screen frameworks that could host these ethylene sites, or a learned model in place of the least squares inversion.
 """
 
 name = f"week{int(r['week'])}_onepager"

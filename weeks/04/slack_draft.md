@@ -5,4 +5,3 @@ TL;DR:
 - Adding one of these as a 13th sensor cuts ethylene error from 9.53 to 0.69 pp at 1% noise, and 6 MOFs plus that sensor hold it there.
 - Treating noise as the variable: ethylene now holds up to 10.5% noise, but methane and ethane break down near 2%, so ethane (3.99 pp) and the ratio are still the limit.
 
-Question: would you be open to a quick call this week? I'd love to hear what model architectures you'd propose for the next step, like using ODAC/UMA to screen frameworks that could host these ethylene sites, or a learned model in place of the least squares inversion.
