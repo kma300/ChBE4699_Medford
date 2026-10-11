@@ -17,7 +17,7 @@ import numpy as np  # noqa: E402
 from matplotlib.colors import TwoSlopeNorm  # noqa: E402
 
 W, H, MARGIN = 1920, 1440, 96
-FONT = ['Arial', 'DejaVu Sans']  # Helvetica Neue ships as a single-face .ttc here, so bold would silently drop
+FONT = ['Arial', 'Liberation Sans', 'DejaVu Sans']  # Helvetica Neue ships as a single-face .ttc here, so bold would silently drop; Liberation Sans has Arial's metrics on Linux
 C = {'bg': '#F6F8FB', 'header': '#3C8DEB', 'title': '#141B2D', 'body': '#1F2937', 'muted': '#5B6472',
      'teal': '#117A7C', 'blue': '#3C8CFF', 'gray': '#A9B4C4', 'line': '#1F2937', 'target': '#D0473E',
      'white': '#FFFFFF', 'green': '#2E9E6A'}
@@ -140,12 +140,21 @@ def _hbar(cv, x, y, width, spec):
 
 def _line(cv, x, y, width, spec):
     h = spec.get('height', 380)
-    ax = cv.inset(x+90, y, width-300, h-70)
+    ax = cv.inset(x+90, y, width-spec.get('right_pad', 300), h-70)
+    if spec.get('band') is not None:  # shaded x range, e.g. a realistic noise window
+        lo, hi = spec['band']
+        ax.axvspan(lo, hi, color=spec.get('band_color', '#FCE9C8'), zorder=0)
+        if spec.get('band_label'):
+            ax.text((lo*hi)**.5, spec.get('band_label_y', 0), spec['band_label'], ha='center', va='bottom', fontsize=15,
+                    color=C['muted'], fontweight='bold')
     for series in spec['series']:
         ax.plot(spec['x'], series['y'], marker='o', linewidth=3, markersize=8, color=series['color'], label=series['label'])
-    ax.legend(loc='upper right', fontsize=17, frameon=False)
+    ax.legend(loc=spec.get('legend_loc', 'upper right'), fontsize=17, frameon=False)
     ax.set_xscale('log')
-    ax.invert_xaxis()
+    if spec.get('invert_x', True):
+        ax.invert_xaxis()
+    if spec.get('ymax') is not None:
+        ax.set_ylim(0, spec['ymax'])
     ax.set_xticks(spec['x'], spec['x_labels'], fontsize=17, color=C['body'])
     ax.minorticks_off()
     ax.tick_params(axis='y', labelsize=17, colors=C['body'], length=0)
@@ -160,7 +169,8 @@ def _line(cv, x, y, width, spec):
         ax.axhline(spec['target'], color=C['target'], linewidth=2.5, linestyle='--')
         ax.text(spec['x'][0], spec['target'], spec['target_label'], color=C['target'], fontsize=16, fontweight='bold',
                 va='bottom', ha='left')
-    cv.texts.extend(spec['x_labels']+[s['label'] for s in spec['series']]+[spec['x_title'], spec['y_title'], spec.get('target_label', '')])
+    cv.texts.extend(spec['x_labels']+[s['label'] for s in spec['series']]+[spec['x_title'], spec['y_title'], spec.get('target_label', ''),
+                    spec.get('band_label', '')])
     return h
 
 

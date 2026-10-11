@@ -77,3 +77,23 @@
 - Gradients: no autodiff library is installed (jax and torch are absent, and new dependencies need Ken's approval). The week uses the closed-form derivative of the linearized sum-to-one least-squares covariance, checked against finite differences, and central finite differences of the full constrained simulator with the noise draws held fixed.
 - Noise sweep keeps the week-2 floor-to-relative ratio (the floor is 10% of the relative noise level).
 - Ken's decision, recorded word for word: "That's good to go. Just put it to my clipboard and then just open the PDF one-pager. I'll send everything myself." (approved `weeks/03/slack_draft.md` as written, with `weeks/03/week3_onepager.pdf` as the attachment; Ken sends it himself)
+
+## Week 4 (2026-10-11)
+
+### Ken's decisions
+
+- Ken's decision, recorded word for word: "dont send it broi, we need to do our weekly research and continue with the agenda and then ill approve"
+- Ken's decision, recorded word for word: "find the repos urself and run the research"
+- Pending Ken's approval: `weeks/04/slack_draft.md` (typed into the Slack DM composer, not sent) with `weeks/04/week4_onepager.png` as the attachment.
+
+### AI decisions
+
+- Follow Dr. Medford's "split the difference" suggestion from 2026-09-29: search the literature for ethylene-selective materials, then put the best known one into the array. Lumping ethane and ethylene is reported only as the C2-lumped error, pending Ken's call on how critical the pair is to the business case.
+- Literature anchors, checked against the sources: UTSA-280 (Lin et al., Nature Materials 2018) has an apparent ethylene/ethane selectivity exceeding 10,000 (ethylene 2.5 mmol/g vs ethane 0.098 mmol/g at 298 K and 1 bar) and reports no methane uptake number; PAF-1-SO3Ag (Li et al., JACS 2014) has an IAST selectivity of 27 to 125 (equimolar, 296 K). Fe2(dobdc) (Bloch et al., Science 2012) is recorded only qualitatively because no selectivity number was verified. Day and Wilmer (Sensors 2020) assumed 5% relative noise for genetic-algorithm MOF arrays.
+- Literature selectivities are IAST or apparent values from isotherms, not dilute-limit Henry ratios. They are used as proxies.
+- Material models, each added as a 13th sensor next to the week-3 genetic-algorithm array: the sieve responds to ethylene only; sieve variants also respond to methane at 10%, 30% or 100% of the ethylene response; metal sites are a real D-MOPH framework with ethylene raised to S times its ethane coefficient (the olefin variant also raises propene to S times propane). The host framework is chosen on development mixtures only, and the spread over all 464 hosts is reported.
+- Noise sweep from 0.05% to 20%, keeping the week-2 floor rule (floor is 10% of the relative level). Breakdown noise is the noise at which a gas's error reaches half of the no-sensor error (always guessing the development-set mean composition), interpolated in log noise.
+- Pruning: backward elimination on development mixtures at 1% noise with the week-3 score, down to 7 sensors, the minimum for 8 gases under the sum-to-one constraint.
+- Fresh mixture seed 20261011. Noise draws for the added sensor come from `default_rng([seed, 4])`, independent of the 471 week-2 columns.
+- The D-MOPH archive was downloaded again on 2026-10-11 for a cloud run; its MD5, SHA-256 and the `final.csv` hash match `notes/data_provenance.md`.
+- `src/slides.py` now falls back to Liberation Sans (Arial metrics) before DejaVu Sans, so cards built on Linux wrap like Arial on the Mac. `_line` gained optional `invert_x`, `band`, `ymax`, `legend_loc` and `right_pad`; the defaults keep the old behavior.
